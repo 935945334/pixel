@@ -59,7 +59,7 @@ characterHeight()
             play.style.height = screen.width + "px";
             play.style.width = window.screen.availHeight + "px";
             var b = kz.offsetWidth;
-            var c = window.screen.availHeight - b - b;
+            var c = window.screen.availHeight - b - b - 100;
             var d = screen.width;
             k.style.width = c + "px";
             kx1.style.width = c + "px";
@@ -72,7 +72,7 @@ characterHeight()
             kz.style.height = screen.height + "px";
             ky.style.height = screen.height + "px";
             var b = kz.offsetWidth;
-            var c = window.screen.availHeight - b - b;
+            var c = window.screen.availHeight - b - b - 100;
             k.style.width = c + "px";
             k.style.height = screen.height + "px";
             kx1.style.width = c + "px";
@@ -167,8 +167,8 @@ var role_xia = "imges/Abigail/xia.gif";
 var role_zuo = "imges/Abigail/zuo.gif";
 var role_you = "imges/Abigail/you.gif";
 function yidong(){
-    alert(window.screen.availHeight);
-    alert(window.screen.height);
+    alert(document.body.offsetWidth);
+    alert(document.body.offsetHeight);
     alert(kz.offsetWidth);
     alert("2")
     if (screen.width > screen.height) {
