@@ -6,6 +6,7 @@ var play = document.getElementById("play");
 var furniture = document.getElementById("furniture");
 var xuanren = document.getElementById("xuanren");
 var ks = document.getElementById("k-s");
+var kx = document.getElementById("k-x");
 var kx1 = document.getElementById("k-x-1");
 var character = document.getElementById("character");
 
@@ -43,7 +44,8 @@ characterHeight()
 //     alert(a);
 // }
     function characterHeight(){
-        character.style.marginTop = ks.offsetHeight + "px"
+        character.style.marginTop = ks.offsetHeight - 70 + "px"
+        character.style.paddingTop =70 + "px"
         character.style.paddingLeft = ks.offsetWidth/2 - 30 + "px"
         // character.style.marginLeft = -300 + "px"
         // alert(ks.offsetHeight);
@@ -52,9 +54,9 @@ characterHeight()
     	if(screen.width < screen.height && screen.width < 1365){
             //竖屏
             play.className = "play2";
-            kz.style.height = screen.width + "px";
-            ky.style.height = screen.width + "px";
-            play.style.height = screen.width + "px";
+            kz.style.height = document.body.offsetWidth + "px";
+            ky.style.height = document.body.offsetWidth + "px";
+            play.style.height = document.body.offsetWidth + "px";
             play.style.width = screen.height + "px";
             var b = kz.offsetWidth;
             var c = screen.height - b - b;
@@ -106,7 +108,7 @@ characterHeight()
                 var d = screen.width;
                 k.style.width = c + "px";
                 var b=kz.offsetWidth;
-                alert("1");    
+                // alert("1");    
             };
             if(screen.width > screen.height && screen.width < 1080){
                 //横屏
@@ -117,7 +119,7 @@ characterHeight()
                 var c = screen.width - b - b;
                 k.style.width = c + "px";
                 k.style.height = screen.height + "px";
-                alert("12");    
+                // alert("12");    
 
             }
             if(screen.width > screen.height && screen.width > 1080){
@@ -125,22 +127,214 @@ characterHeight()
                 play.className = "play3";  
                 k.style.width = "756px";
                 k.style.height = "375x";  
-                alert("123");    
+                // alert("123");    
             }
     }, false);
 
     function get_canvas(ev, obj) {
 
-    m_clientX = ev.clientX - obj.offsetLeft;
-
-    m_clientY = ev.clientY - obj.offsetTop;
+        if (screen.width > screen.height) {
+            m_clientX = ev.clientX - obj.offsetLeft;
+            m_clientY = ev.clientY - obj.offsetTop;
+        }else if(screen.width < screen.height) {
+            m_clientX = ev.clientX -kx.offsetHeight;
+            m_clientY = ev.clientY - obj.offsetLeft;
+        }
+        // alert(obj.offsetLeft);
+    // m_clientX = ev.clientX - obj.offsetTop;
+    // m_clientX = ev.clientX -kx.offsetHeight;
+    // m_clientY = ev.clientY - obj.offsetLeft;
+    
     document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
     }
 
 
 
 
-    function xuanRen(){
+    
+
+
+
+
+var zuobiaoX = document.getElementById("zuobiao-x").value;
+var zuobiaoY = document.getElementById("zuobiao-y").value;
+var character = document.getElementById("character");
+var role = document.getElementById("role");
+var role_img = "imges/Abigail/Abigail.png";
+var role_shang = "imges/Abigail/shang.gif";
+var role_xia = "imges/Abigail/xia.gif";
+var role_zuo = "imges/Abigail/zuo.gif";
+var role_you = "imges/Abigail/you.gif";
+function yidong(){
+    if (screen.width > screen.height) {
+        var clientX = m_clientX;
+        var clientY = m_clientY;
+        window.clientX = clientX - parseInt(ks.offsetWidth/2);
+        window.clientY = clientY -70;
+        var i=0;
+    }else if(screen.width < screen.height){
+        var clientX = -m_clientX;
+        var clientY = m_clientY;
+        window.clientX = clientX -70; 
+        window.clientY = clientY - parseInt(ks.offsetWidth/2);
+        var i=0;
+    }
+        // var clientX = -m_clientX;
+        // var clientY = m_clientY;
+        // window.clientX = clientX -70; 
+        // // window.clientX = clientX - parseInt(ks.offsetWidth/2);
+        // window.clientY = clientY - parseInt(ks.offsetWidth/2);
+        // // window.clientY = clientY -70;
+        // // alert(clientY);
+        // var i=0;
+
+        yidongImgX();
+        mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
+                if (screen.width > screen.height) {
+                    yidongX();
+                }else if(screen.width < screen.height){
+                    // alert("1")
+                    
+                    yidongXX()
+                }
+                
+
+                i++  //若过一秒，执行一次i++
+         }, 5);
+
+
+}
+function yidongXX(){
+     if(zuobiaoX < clientY){
+            zuobiaoX = parseInt(zuobiaoX) + 1;
+             document.getElementById("zuobiao-x").value = parseInt(document.getElementById("zuobiao-x").value) + 1;
+            character.style.marginLeft = zuobiaoX + "px";
+     }else if(zuobiaoX > clientY){
+            zuobiaoX = parseInt(zuobiaoX) - 1;
+             document.getElementById("zuobiao-x").value = parseInt(document.getElementById("zuobiao-x").value) - 1;
+            character.style.marginLeft = zuobiaoX + "px";
+     }else if(zuobiaoX == clientY){
+        clearInterval(mouseTime);
+        yidong_YY()
+     }
+    
+}
+function yidong_YY(){
+    var i=0;
+    yidongImgY()
+    mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
+                
+                yidongYY();
+
+                 i++  //若过一秒，执行一次i++
+         }, 5);
+}
+function yidongYY(){
+    if(zuobiaoY < clientX){
+            zuobiaoY = parseInt(zuobiaoY) + 1;
+            document.getElementById("zuobiao-y").value = parseInt(document.getElementById("zuobiao-y").value) + 1;
+            character.style.paddingTop = zuobiaoY  + 70 + "px";
+        }else if(zuobiaoY > clientX){
+            zuobiaoY = parseInt(zuobiaoY) - 1;
+            document.getElementById("zuobiao-y").value = parseInt(document.getElementById("zuobiao-y").value) - 1;
+            character.style.paddingTop = zuobiaoY + 70 + "px";
+        }else if(zuobiaoY == clientX){
+            clearInterval(mouseTime);
+            role.src = role_img;
+        }
+}
+
+function yidongImgX(){
+    if(screen.width > screen.height){
+        if(zuobiaoX < clientX){
+            role.src = role_you;
+        }else if(zuobiaoX > clientX){
+            role.src = role_zuo;
+        }
+    }else if(screen.width < screen.height){
+        if(zuobiaoX < clientY){
+            role.src = role_you;
+        }else if(zuobiaoX > clientY){
+            role.src = role_zuo;
+        }
+    }
+    // alert(clientX,clientY);
+    
+}
+
+function yidongX(){
+    if(zuobiaoX < clientX){
+        zuobiaoX = parseInt(zuobiaoX) + 1;
+        document.getElementById("zuobiao-x").value = parseInt(document.getElementById("zuobiao-x").value) + 1;
+        character.style.marginLeft = zuobiaoX + "px";
+    }else if(zuobiaoX > clientX){
+        zuobiaoX = parseInt(zuobiaoX) - 1;
+        document.getElementById("zuobiao-x").value = parseInt(document.getElementById("zuobiao-x").value) - 1;
+        character.style.marginLeft = zuobiaoX + "px";
+        // alert(clientX)
+    }else if(zuobiaoX == clientX){
+        clearInterval(mouseTime);
+        yidong_Y()
+    }
+}
+function yidongImgY(){
+    // alert(zuobiaoX);
+    // alert(zuobiaoY);
+    // alert(clientX);
+    // alert(clientY);
+    if(screen.width > screen.height){
+        if(zuobiaoY < clientY){
+            role.src = role_shang;
+        }else if(zuobiaoY > clientY){
+            role.src = role_xia;
+        }
+    }else if(screen.width < screen.height){
+        if(zuobiaoY < clientX){
+            role.src = role_xia;
+        }else if(zuobiaoY > clientX){
+            role.src = role_shang;
+        }
+    }
+    // alert(clientX,clientY);
+    // if(zuobiaoY < clientY){
+    //     role.src = role_xia;
+    // }else if(zuobiaoY > clientY){
+    //     role.src = role_shang;
+    // }
+}
+function yidong_Y(){
+    var i=0;
+    yidongImgY()
+    mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
+                
+                yidongY();
+
+                 i++  //若过一秒，执行一次i++
+         }, 5);
+}
+function yidongY(){
+        if(zuobiaoY < clientY){
+            zuobiaoY = parseInt(zuobiaoY) + 1;
+            document.getElementById("zuobiao-y").value = parseInt(document.getElementById("zuobiao-y").value) + 1;
+            character.style.paddingTop = zuobiaoY + 70 + "px";
+        }else if(zuobiaoY > clientY){
+            zuobiaoY = parseInt(zuobiaoY) - 1;
+            document.getElementById("zuobiao-y").value = parseInt(document.getElementById("zuobiao-y").value) - 1;
+            character.style.paddingTop = zuobiaoY + 70 + "px";
+        }else if(zuobiaoY == clientY){
+            clearInterval(mouseTime);
+            role.src = role_img;
+        }
+}
+
+
+
+
+
+
+
+
+function xuanRen(){
         xuanren.style.display='flex';
     }
     function qieHuan(){
@@ -362,89 +556,3 @@ characterHeight()
         fyx3.src="imges/furniture/y-x-15.png";
         qieHuan()
     }
-
-
-
-
-var zuobiaoX = document.getElementById("zuobiao-x").value;
-var zuobiaoY = document.getElementById("zuobiao-y").value;
-var character = document.getElementById("character");
-var role = document.getElementById("role");
-var role_img = "imges/Abigail/Abigail.png";
-var role_shang = "imges/Abigail/shang.gif";
-var role_xia = "imges/Abigail/xia.gif";
-var role_zuo = "imges/Abigail/zuo.gif";
-var role_you = "imges/Abigail/you.gif";
-function yidong(){
-        var clientX = m_clientX;
-        var clientY = m_clientY;
-        window.clientX = clientX - parseInt(ks.offsetWidth/2);  
-        window.clientY = clientY -70;  
-        // alert(clientY);
-        var i=0;
-
-        yidongImgX();
-        mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
-                yidongX();
-
-                i++  //若过一秒，执行一次i++
-         }, 5);
-
-
-}
-function yidongImgX(){
-    // alert(clientX,clientY);
-    if(zuobiaoX < clientX){
-        role.src = role_you;
-    }else if(zuobiaoX > clientX){
-        role.src = role_zuo;
-    }
-}
-
-function yidongX(){
-    if(zuobiaoX < clientX){
-        zuobiaoX = parseInt(zuobiaoX) + 1;
-        document.getElementById("zuobiao-x").value = parseInt(document.getElementById("zuobiao-x").value) + 1;
-        character.style.marginLeft = zuobiaoX + "px";
-    }else if(zuobiaoX > clientX){
-        zuobiaoX = parseInt(zuobiaoX) - 1;
-        document.getElementById("zuobiao-x").value = parseInt(document.getElementById("zuobiao-x").value) - 1;
-        character.style.marginLeft = zuobiaoX + "px";
-        // alert(clientX)
-    }else if(zuobiaoX == clientX){
-        clearInterval(mouseTime);
-        yidong_Y()
-    }
-}
-function yidongImgY(){
-    // alert(clientX,clientY);
-    if(zuobiaoY < clientY){
-        role.src = role_xia;
-    }else if(zuobiaoY > clientY){
-        role.src = role_shang;
-    }
-}
-function yidong_Y(){
-    var i=0;
-    yidongImgY()
-    mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
-                
-                yidongY();
-
-                 i++  //若过一秒，执行一次i++
-         }, 5);
-}
-function yidongY(){
-        if(zuobiaoY < clientY){
-            zuobiaoY = parseInt(zuobiaoY) + 1;
-            document.getElementById("zuobiao-y").value = parseInt(document.getElementById("zuobiao-y").value) + 1;
-            character.style.paddingTop = zuobiaoY + "px";
-        }else if(zuobiaoY > clientY){
-            zuobiaoY = parseInt(zuobiaoY) - 1;
-            document.getElementById("zuobiao-y").value = parseInt(document.getElementById("zuobiao-y").value) - 1;
-            character.style.paddingTop = zuobiaoY + "px";
-        }else if(zuobiaoY == clientY){
-            clearInterval(mouseTime);
-            role.src = role_img;
-        }
-}
