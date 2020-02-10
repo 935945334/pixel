@@ -102,7 +102,7 @@ characterHeight()
                 kz.style.height = screen.width + "px";
                 ky.style.height = screen.width + "px";
                 play.style.height = screen.width + "px";
-                play.style.width = screen.height + "px";
+                play.style.width = 726 + "px";
                 var b = kz.offsetWidth;
                 var c = screen.height - b - b;
                 var d = screen.width;
