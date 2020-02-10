@@ -54,9 +54,9 @@ characterHeight()
     	if(screen.width < screen.height && screen.width < 1365){
             //竖屏
             play.className = "play2";
-            kz.style.height = document.body.offsetWidth + "px";
-            ky.style.height = document.body.offsetWidth + "px";
-            play.style.height = document.body.offsetWidth + "px";
+            kz.style.height = screen.width + "px";
+            ky.style.height = screen.width + "px";
+            play.style.height = screen.width + "px";
             play.style.width = screen.height + "px";
             var b = kz.offsetWidth;
             var c = screen.height - b - b;
@@ -146,6 +146,7 @@ characterHeight()
     // m_clientY = ev.clientY - obj.offsetLeft;
     
     document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
+
     }
 
 
@@ -166,6 +167,7 @@ var role_xia = "imges/Abigail/xia.gif";
 var role_zuo = "imges/Abigail/zuo.gif";
 var role_you = "imges/Abigail/you.gif";
 function yidong(){
+    alert(window.screen.availHeight);
     if (screen.width > screen.height) {
         var clientX = m_clientX;
         var clientY = m_clientY;
@@ -284,9 +286,9 @@ function yidongImgY(){
     // alert(clientY);
     if(screen.width > screen.height){
         if(zuobiaoY < clientY){
-            role.src = role_shang;
-        }else if(zuobiaoY > clientY){
             role.src = role_xia;
+        }else if(zuobiaoY > clientY){
+            role.src = role_shang;
         }
     }else if(screen.width < screen.height){
         if(zuobiaoY < clientX){
