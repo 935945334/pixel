@@ -96,6 +96,7 @@ characterHeight()
   	const evt = "onorientationchange" in window ? "orientationchange" : "resize";
   	window.addEventListener(evt, function () {
             //判断横屏
+            location.reload();
             if(screen.width < screen.height && screen.width < 1080){
                 //竖屏
                 play.className = "play2";
