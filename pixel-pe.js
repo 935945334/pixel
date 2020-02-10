@@ -177,7 +177,7 @@ function yidong(){
         var clientX = -m_clientX;
         var clientY = m_clientY;
         window.clientX = clientX -70; 
-        window.clientY = clientY;
+        window.clientY = clientY - parseInt(ks.offsetWidth/2);
         var i=0;
     }
         // var clientX = -m_clientX;
