@@ -167,7 +167,8 @@ var role_xia = "imges/Abigail/xia.gif";
 var role_zuo = "imges/Abigail/zuo.gif";
 var role_you = "imges/Abigail/you.gif";
 function yidong(){
-    // alert(window.screen.availHeight);
+    alert(window.screen.availHeight);
+    alert("1")
     if (screen.width > screen.height) {
         var clientX = m_clientX;
         var clientY = m_clientY;
