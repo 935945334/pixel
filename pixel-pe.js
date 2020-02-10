@@ -33,7 +33,7 @@ var fyx2 = document.getElementById("f-y-x-2");
 var fyx3 = document.getElementById("f-y-x-3");
 pingmu();
 jj()
-characterHeight()
+// characterHeight()
 // pingmu1()
 // function pingmu1(){
 //     kz.style.height = screen.width + "px";
@@ -170,14 +170,18 @@ function yidong(){
     if (screen.width > screen.height) {
         var clientX = m_clientX;
         var clientY = m_clientY;
-        window.clientX = clientX - parseInt(ks.offsetWidth/2);
-        window.clientY = clientY -70;
+        // window.clientX = clientX - parseInt(ks.offsetWidth/2);
+        window.clientX = clientX;
+        window.clientY = clientY;
+        // window.clientY = clientY -70;
         var i=0;
     }else if(screen.width < screen.height){
         var clientX = -m_clientX;
         var clientY = m_clientY;
-        window.clientX = clientX -70; 
-        window.clientY = clientY - parseInt(ks.offsetWidth/2);
+        window.clientX = clientX;
+        // window.clientX = clientX -70; 
+        // window.clientY = clientY - parseInt(ks.offsetWidth/2);
+        window.clientY = clientY;
         var i=0;
     }
         // var clientX = -m_clientX;
