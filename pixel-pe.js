@@ -51,7 +51,7 @@ characterHeight()
         // alert(ks.offsetHeight);
     }
     function pingmu(){
-    	if(screen.width < screen.height && screen.width < 1365){
+    	if(screen.width < screen.height && screen.width < 1080){
             //竖屏
             play.className = "play2";
             kz.style.height = screen.width + "px";
@@ -65,19 +65,19 @@ characterHeight()
             kx1.style.width = c + "px";
             var b=kz.offsetWidth;
         };
-        if(screen.width > screen.height && screen.width < 1365){
+        if(screen.width > screen.height && screen.width < 1080){
             //横屏
             
             play.className = "play1";
             kz.style.height = screen.height + "px";
             ky.style.height = screen.height + "px";
             var b = kz.offsetWidth;
-            var c = document.documentElement.clientHeight - b - b;
+            var c = document.documentElement.clientWidth - b - b;
             k.style.width = c + "px";
             k.style.height = screen.height + "px";
             kx1.style.width = c + "px";
         }
-        if(screen.width > screen.height && screen.width > 1365){
+        if(screen.width > screen.height && screen.width > 1080){
             //PC横屏            
             play.className = "play3";  
             k.style.width = "756px";
@@ -102,24 +102,23 @@ characterHeight()
                 kz.style.height = screen.width + "px";
                 ky.style.height = screen.width + "px";
                 play.style.height = screen.width + "px";
-                play.style.width = 726 + "px";
+                play.style.width = document.documentElement.clientHeight + "px";
                 var b = kz.offsetWidth;
-                var c = screen.height - b - b;
+                var c = document.documentElement.clientHeight - b - b;
                 var d = screen.width;
                 k.style.width = c + "px";
+                kx1.style.width = c + "px";
                 var b=kz.offsetWidth;
-                // alert("1");    
             };
             if(screen.width > screen.height && screen.width < 1080){
-                //横屏
                 play.className = "play1";
                 kz.style.height = screen.height + "px";
                 ky.style.height = screen.height + "px";
                 var b = kz.offsetWidth;
-                var c = screen.width - b - b;
+                var c = document.documentElement.clientWidth - b - b;
                 k.style.width = c + "px";
                 k.style.height = screen.height + "px";
-                // alert("12");    
+                kx1.style.width = c + "px";
 
             }
             if(screen.width > screen.height && screen.width > 1080){
@@ -167,8 +166,6 @@ var role_xia = "imges/Abigail/xia.gif";
 var role_zuo = "imges/Abigail/zuo.gif";
 var role_you = "imges/Abigail/you.gif";
 function yidong(){
-    alert(document.documentElement.clientHeight);
-    alert("3")
     if (screen.width > screen.height) {
         var clientX = m_clientX;
         var clientY = m_clientY;
