@@ -38,4 +38,5 @@ function kk(){
 function kg(){
 	document.getElementById("tips1").innerHTML = "屏幕宽度：" + screen.width + " 屏幕高度：" + screen.height;
 	document.getElementById("tips2").innerHTML = "人物宽度：" + role_1.width + " 人物高度：" + role_1.height;
+	
 }
