@@ -17,10 +17,10 @@ function get_canvas(ev, obj) {
         m_clientX = ev.clientX - obj.offsetLeft;
         m_clientY = ev.clientY - obj.offsetTop;
     }else if(screen.width < screen.height) {
-        m_clientX = ev.clientX - obj.offsetHeight;
+        m_clientX = ev.clientX - obj.offsetTop;
         m_clientY = ev.clientY - obj.offsetLeft;
     } 
-    document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
+    document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY + ",top" + obj.offsetTop + ",left" + obj.offsetLeft;
 }
 
 function move(){
