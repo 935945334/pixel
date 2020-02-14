@@ -56,7 +56,7 @@ function move(){
         var clientY = m_clientY;
         window.clientX = clientX;
         // window.clientX = clientX -70; 
-        window.clientY = clientY - parseInt(kt.offsetWidth/2) - 100;
+        window.clientY = clientY - parseInt(kt.offsetWidth/2) + 70;
         // window.clientY = clientY;
     }
     roleX()
