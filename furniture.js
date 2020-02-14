@@ -36,3 +36,6 @@ function kk(){
     furniture.style.width = w + "px";
     furniture.style.height = h + "px";
 }
+function kg(){
+	document.getElementById("tips1").innerHTML = "屏幕宽度：" + screen.width + " 屏幕高度：" + screen.height;
+}
