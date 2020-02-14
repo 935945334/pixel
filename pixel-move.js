@@ -25,7 +25,7 @@ function roleHeight(){
     role.style.marginTop = kt.offsetHeight - 60 + "px"
     role.style.paddingTop = 70 + "px"
     // role.style.paddingLeft = "43vh"
-    role.style.paddingLeft = parseInt(kt.offsetWidth/2) - 100 + "px"
+    role.style.paddingLeft = parseInt(kt.offsetWidth/2) - 200 + "px"
     // role.style.marginLeft = - 30 + "px"
     // alert(kt.offsetHeight);
 }
@@ -56,7 +56,7 @@ function move(){
         var clientY = m_clientY;
         window.clientX = clientX;
         // window.clientX = clientX -70; 
-        window.clientY = clientY - parseInt(kt.offsetWidth/2) + 70;
+        window.clientY = clientY - parseInt(kt.offsetWidth/2) + 170;
         // window.clientY = clientY;
     }
     roleX()
