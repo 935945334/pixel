@@ -14,10 +14,10 @@ var t = 0;
 roleHeight()
 function xuanRen(){
     if (t == 0) {
-        alert(kt.offsetHeight);
+        alert(kt.offsetWidth);
     }
     if (t == 1) {
-        alert(kt.offsetHeight);
+        alert(kt.offsetWidth);
     }
 }
 function roleHeight(){
