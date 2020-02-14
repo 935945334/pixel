@@ -2,6 +2,7 @@ var coordinateX = document.getElementById("coordinate-x");
 var coordinateY = document.getElementById("coordinate-y");
 var role = document.getElementById("role");
 var kt = document.getElementById("k-t");
+var kl = document.getElementById("k-l");
 var role_img = "imges/Abigail/Abigail.png";
 roleHeight()
 function roleHeight(){
@@ -18,9 +19,9 @@ function get_canvas(ev, obj) {
         m_clientY = ev.clientY - obj.offsetTop;
     }else if(screen.width < screen.height) {
         m_clientX = ev.clientX - obj.offsetTop;
-        m_clientY = ev.clientY - obj.offsetLeft;
+        m_clientY = ev.clientY - kl.offsetWidth;
     } 
-    document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY + ",top" + obj.offsetTop + ",left" + obj.offsetLeft;
+    document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY + ",top" + obj.offsetTop + ",left" + kl.offsetWidth;
 }
 
 function move(){
