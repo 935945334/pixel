@@ -12,9 +12,7 @@ var role = document.getElementById("role");
 kg()
 Mobile()
 kk()
-function xuanRen(){
-	alert("1")
-}
+
 
 
 function Mobile(){
