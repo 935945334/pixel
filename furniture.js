@@ -9,7 +9,7 @@ var kt = document.getElementById("k-t");
 var kb = document.getElementById("k-b");
 var kb1 = document.getElementById("k-b-1");
 var role = document.getElementById("role");
-
+kg()
 Mobile()
 kk()
 function xuanRen(){
