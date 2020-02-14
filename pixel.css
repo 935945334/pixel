@@ -16,10 +16,13 @@
 	position: absolute;
 }
 #play{
-	display: -webkit-flex;
+/*	display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
-    justify-content: center;
+    justify-content: center;*/
+    background:url(imges/diban-1.png);
+    height: 100vw;
+    width: 100vh;
 }
 .play-pc{
 	width: 812px;
@@ -33,11 +36,12 @@
     margin-left: 100vw;
     width: 100vh;
     height: 100vw;
-
+	background:url(imges/diban-1.png);
 }
 .play-Mobile-y{
 	width: 100vw;
 	height: 100vh;
+	background:url(imges/diban-1.png);
 }
 #k{
 	width: 100%;

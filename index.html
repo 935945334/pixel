@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="pixel.css">
 </head>
 <body id="body-x">
-	<div id="play" class="play-pc">
-		<!-- <img src="imges/k-l.png" alt="" id="k-l"> -->
+	<!-- <div id="play" class="play-pc">
+		<img src="imges/k-l.png" alt="" id="k-l">
 		<div id="k">
 			<div id="coordinate">
 				<input type="text" id="coordinate-x"  value="0">
@@ -20,17 +20,28 @@
 					<img src="imges/Abigail/Abigail.png" alt="" id="role-1">
 				</div>
 			</div>
-			<!-- <div id="k-t">
+			<div id="k-t">
 				<div id="m-z" onclick="xuanRen();">
 					<img src="imges/furniture/men-z.png" alt="">
 				</div>
 				<div id="m-y" onclick="xuanRen();">
 					<img src="imges/furniture/men-y.png" alt="">
 				</div>
-			</div> -->
+			</div>
 			<div id="k-b" onmousemove="get_canvas(event,this)" onclick="move();"></div>
 		</div>
-		<!-- <img src="imges/k-r.png" alt="" id="k-r"> -->
+		<img src="imges/k-r.png" alt="" id="k-r">
+	</div> -->
+
+	<div id="play" onmousemove="get_canvas(event,this)" onclick="move();">
+	<div id="coordinate">
+		<input type="text" id="coordinate-x"  value="0">
+		<input type="text" id="coordinate-y"  value="0">
+		<div id="tips">当前坐标：X：0 ,Y：0</div>
+	</div>
+		<div id="role">
+			<img src="imges/Abigail/Abigail.png" alt="" id="role-1">
+		</div>
 	</div>
 </body>
 <script src="pixel-move.js"></script>
