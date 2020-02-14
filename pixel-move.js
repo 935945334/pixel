@@ -86,7 +86,7 @@ function moveYX(){
         role.style.paddingTop = coordinateY.value + "px";
     }
     else if(coordinateY.value > clientY){
-        coordinateX.value = parseInt(coordinateX.value) - 1;
+        coordinateY.value = parseInt(coordinateY.value) - 1;
         role.style.paddingTop = coordinateY.value + "px";
     }
     else if(coordinateY.value == clientY){
@@ -100,7 +100,7 @@ function moveYY(){
         role.style.paddingTop = coordinateY.value + "px";
     }
     else if(coordinateY.value > clientX){
-        coordinateX.value = parseInt(coordinateX.value) - 1;
+        coordinateY.value = parseInt(coordinateY.value) - 1;
         role.style.paddingTop = coordinateY.value + "px";
     }
     else if(coordinateY.value == clientX){
