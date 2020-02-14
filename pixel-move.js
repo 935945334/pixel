@@ -5,7 +5,7 @@ var kt = document.getElementById("k-t");
 var role_img = "imges/Abigail/Abigail.png";
 roleHeight()
 function roleHeight(){
-    // role.style.marginTop = "70px";
+    role.style.marginTop = "70px";
     // role.style.marginTop = kt.offsetHeight - 70 + "px"
     // role.style.paddingTop =70 + "px"
     // role.style.paddingLeft = kt.offsetWidth/2 - 30 + "px"
@@ -17,11 +17,8 @@ function get_canvas(ev, obj) {
         m_clientX = ev.clientX - obj.offsetLeft;
         m_clientY = ev.clientY - obj.offsetTop;
     }else if(screen.width < screen.height) {
-        // m_clientX = ev.clientX - obj.offsetTop;
-        // m_clientY = ev.clientY - obj.offsetLeft;
-        m_clientX = ev.clientX - obj.offsetLeft;
-        m_clientY = ev.clientY;
-        alert(obj.offsetLeft);
+        m_clientX = ev.clientX - obj.offsetHeight;
+        m_clientY = ev.clientY - obj.offsetLeft;
     } 
     document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
 }
