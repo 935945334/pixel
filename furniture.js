@@ -11,7 +11,7 @@ var kb1 = document.getElementById("k-b-1");
 var role = document.getElementById("role");
 
 Mobile()
-k()
+kk()
 function xuanRen(){
 	alert("1")
 }
@@ -30,7 +30,7 @@ function Mobile(){
         kr.style.height = "100vh";
         }
 }
-function k(){
+function kk(){
     var w = k.offsetWidth;
     var h = k.offsetHeight;
     furniture.style.width = w + "px";
