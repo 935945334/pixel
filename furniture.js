@@ -9,6 +9,7 @@ var kt = document.getElementById("k-t");
 var kb = document.getElementById("k-b");
 var kb1 = document.getElementById("k-b-1");
 var role = document.getElementById("role");
+var role_1 = document.getElementById("role-1");
 kg()
 Mobile()
 kk()
@@ -36,4 +37,5 @@ function kk(){
 }
 function kg(){
 	document.getElementById("tips1").innerHTML = "屏幕宽度：" + screen.width + " 屏幕高度：" + screen.height;
+	document.getElementById("tips2").innerHTML = "人物宽度：" + role_1.width + " 人物高度：" + role_1.height;
 }
