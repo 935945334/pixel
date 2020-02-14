@@ -5,7 +5,7 @@ var kt = document.getElementById("k-t");
 var role_img = "imges/Abigail/Abigail.png";
 roleHeight()
 function roleHeight(){
-    role.style.marginTop = "70px";
+    // role.style.marginTop = "70px";
     // role.style.marginTop = kt.offsetHeight - 70 + "px"
     // role.style.paddingTop =70 + "px"
     // role.style.paddingLeft = kt.offsetWidth/2 - 30 + "px"
