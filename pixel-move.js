@@ -25,7 +25,7 @@ function roleHeight(){
     role.style.marginTop = kt.offsetHeight - 60 + "px"
     role.style.paddingTop = 70 + "px";
     // role.style.paddingLeft = "500px"
-    if (screen.width > screen.height) {
+    if (window.orientation == 90 || window.orientation == -90) {
         role.style.paddingLeft = kt.offsetWidth/2 - 30 + "px";
     }else if(screen.width < screen.height){
         role.style.paddingLeft = parseInt(window.innerHeight/2) - 60  + "px";
@@ -36,7 +36,7 @@ function roleHeight(){
     // alert(kt.offsetHeight);
 }
 function get_canvas(ev, obj) {
-    if (screen.width > screen.height) {
+    if (window.orientation == 90 || window.orientation == -90) {
         m_clientX = ev.clientX - obj.offsetLeft;
         m_clientY = ev.clientY - obj.offsetTop;
     }else if(screen.width < screen.height) {
@@ -49,7 +49,7 @@ function move(){
     jc();//若函数运行中则终止运行
     zt();//设置函数运行状态，t=1(运行中) t=0(未运行)
     
-    if (screen.width > screen.height) {
+    if (window.orientation == 90 || window.orientation == -90) {
         var clientX = m_clientX;
         var clientY = m_clientY;
         window.clientX = clientX - parseInt(kt.offsetWidth/2) ;
@@ -69,7 +69,7 @@ function move(){
     var i=0;
     mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
             // alert("横屏")
-            if (screen.width > screen.height) {
+            if (window.orientation == 90 || window.orientation == -90) {
                 // alert("横屏")
                 moveXX();
             }else if(screen.width < screen.height){
@@ -124,7 +124,7 @@ function moveY(){
     var i=0;
     mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
         // alert("横屏")
-        if (screen.width > screen.height) {
+        if (window.orientation == 90 || window.orientation == -90) {
             // alert("横屏")
             moveYX();
         }else if(screen.width < screen.height){
@@ -166,7 +166,7 @@ function moveYY(){
 }
 
 function roleX(){
-    if (screen.width > screen.height){
+    if (window.orientation == 90 || window.orientation == -90){
         if (coordinateX.value < clientX) {
             role_1.src = role_right;
         }else if(coordinateX.value > clientX){
@@ -182,7 +182,7 @@ function roleX(){
     
 }
 function roleY(){
-    if (screen.width > screen.height){
+    if (window.orientation == 90 || window.orientation == -90){
         if (coordinateY.value < clientY) {
             role_1.src = role_bottom;
         }else if(coordinateY.value > clientY){
