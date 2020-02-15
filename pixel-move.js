@@ -26,9 +26,9 @@ function roleHeight(){
     role.style.paddingTop = 70 + "px";
     // role.style.paddingLeft = "500px"
     if (screen.width > screen.height) {
-        role.style.paddingLeft = kt.offsetWidth/2 + "px";
+        role.style.paddingLeft = kt.offsetWidth/2 - 30 + "px";
     }else if(screen.width < screen.height){
-        role.style.paddingLeft = parseInt(document.body.offsetHeight/2) + "px";
+        role.style.paddingLeft = parseInt(document.body.offsetHeight/2) - 60  + "px";
     }
     // role.style.paddingLeft = kt.offsetWidth/2;
     
@@ -52,7 +52,7 @@ function move(){
     if (screen.width > screen.height) {
         var clientX = m_clientX;
         var clientY = m_clientY;
-        window.clientX = clientX - parseInt(kt.offsetWidth/2);
+        window.clientX = clientX - parseInt(kt.offsetWidth/2) ;
         // window.clientX = clientX;
         window.clientY = clientY;
         // window.clientY = clientY -70;
@@ -62,7 +62,7 @@ function move(){
         var clientY = m_clientY;
         window.clientX = clientX;
         // window.clientX = clientX -70; 
-        window.clientY = clientY - parseInt(document.body.offsetHeight/2);
+        window.clientY = clientY - parseInt(document.body.offsetHeight/2) + 30;
         // window.clientY = clientY;
     }
     roleX()
