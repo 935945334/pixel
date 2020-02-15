@@ -17,14 +17,14 @@ kk()
 
 
 function Mobile(){
-	if(screen.width < screen.height && screen.width < 1080){
+	if(window.orientation == 180 || window.orientation == 0){
 		//竖屏
 		document.body.style.height = window.innerHeight + "px";
 		play.className = "play-Mobile-x";
 		play.style.width = window.innerHeight + "px";
         kl.style.height = "100vw";
         kr.style.height = "100vw";
-	}else if(screen.width > screen.height && screen.width < 1080){
+	}else if(window.orientation == 90 || window.orientation == -90){
         //横屏
         play.className = "play-Mobile-y";
         kl.style.height = "100vh";
