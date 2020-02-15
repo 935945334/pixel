@@ -28,7 +28,7 @@ function roleHeight(){
     if (screen.width > screen.height) {
         role.style.paddingLeft = kt.offsetWidth/2 - 30 + "px";
     }else if(screen.width < screen.height){
-        role.style.paddingLeft = parseInt(document.body.offsetHeight/2) - 60  + "px";
+        role.style.paddingLeft = parseInt(window.innerHeight/2) - 60  + "px";
     }
     // role.style.paddingLeft = kt.offsetWidth/2;
     
@@ -62,7 +62,7 @@ function move(){
         var clientY = m_clientY;
         window.clientX = clientX;
         // window.clientX = clientX -70; 
-        window.clientY = clientY - parseInt(document.body.offsetHeight/2) + 30;
+        window.clientY = clientY - parseInt(window.innerHeight/2) + 30;
         // window.clientY = clientY;
     }
     roleX()
