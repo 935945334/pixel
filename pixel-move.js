@@ -14,7 +14,7 @@ var t = 0;
 roleHeight()
 function xuanRen(){
     if (t == 0) {
-        alert(parseInt(document.body.offsetHeight/2));
+        alert(window.innerHeight);
     }
     if (t == 1) {
         alert(kt.offsetWidth);
