@@ -25,8 +25,13 @@ function roleHeight(){
     role.style.marginTop = kt.offsetHeight - 60 + "px"
     role.style.paddingTop = 70 + "px";
     // role.style.paddingLeft = "500px"
+    if (screen.width > screen.height) {
+        role.style.paddingLeft = kt.offsetWidth/2 + "px";
+    }else if(screen.width < screen.height){
+        role.style.paddingLeft = parseInt(document.body.offsetHeight/2) + "px";
+    }
     // role.style.paddingLeft = kt.offsetWidth/2;
-    role.style.paddingLeft = parseInt(document.body.offsetHeight/2) + "px";
+    
     // role.style.marginLeft = - 30 + "px"
     // alert(kt.offsetHeight);
 }

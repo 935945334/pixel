@@ -41,4 +41,5 @@ function kg(){
 	document.getElementById("tips3").innerHTML = "body宽度：" + document.body.offsetWidth + " body高度：" + document.body.offsetHeight;
     document.getElementById("tips4").innerHTML = "ktoffset宽度：" + kt.offsetWidth + "ktoffset高度：" + kt.offsetHeight;
     document.getElementById("tips5").innerHTML = "ktclient宽度：" + kt.clientWidth + " ktclient高度：" + kt.clientHeight;
+    document.getElementById("tips6").innerHTML = "klclient宽度：" + kl.clientWidth + " klclient高度：" + kl.clientHeight;
 }
