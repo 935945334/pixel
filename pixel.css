@@ -1,7 +1,6 @@
 
 #coordinate div{
 	background: #eee;
-	display: none;
 }
 #role-1{
 	border-style:solid;
@@ -23,7 +22,7 @@
 #coordinate{
 	z-index: 10;
 	position: absolute;
-	/*display: none;*/
+	display: none;
 }
 #play{
 	display: -webkit-flex;
