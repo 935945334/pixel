@@ -19,7 +19,9 @@ kk()
 function Mobile(){
 	if(screen.width < screen.height && screen.width < 1080){
 		//竖屏
+		
 		play.className = "play-Mobile-x";
+		play.style.width = window.innerHeight + "px";
         kl.style.height = "100vw";
         kr.style.height = "100vw";
 	}else if(screen.width > screen.height && screen.width < 1080){
