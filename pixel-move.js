@@ -14,7 +14,7 @@ var t = 0;
 roleHeight()
 function xuanRen(){
     if (t == 0) {
-        alert(parseInt(kt.offsetWidth/2));
+        alert(parseInt(document.body.offsetHeight/2));
     }
     if (t == 1) {
         alert(kt.offsetWidth);
@@ -26,7 +26,7 @@ function roleHeight(){
     role.style.paddingTop = 70 + "px";
     // role.style.paddingLeft = "500px"
     // role.style.paddingLeft = kt.offsetWidth/2;
-    role.style.paddingLeft = parseInt(kt.offsetWidth/2) + "px";
+    role.style.paddingLeft = parseInt(document.body.offsetHeight/2) + "px";
     // role.style.marginLeft = - 30 + "px"
     // alert(kt.offsetHeight);
 }
@@ -57,7 +57,7 @@ function move(){
         var clientY = m_clientY;
         window.clientX = clientX;
         // window.clientX = clientX -70; 
-        window.clientY = clientY - parseInt(kt.offsetWidth/2);
+        window.clientY = clientY - parseInt(document.body.offsetHeight/2);
         // window.clientY = clientY;
     }
     roleX()
