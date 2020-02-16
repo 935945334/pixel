@@ -1,15 +1,3 @@
-var play = document.getElementById("play");
-var kl = document.getElementById("k-l");
-var kr = document.getElementById("k-r");
-var k = document.getElementById("k");
-var play = document.getElementById("play");
-var furniture = document.getElementById("furniture");
-var choice = document.getElementById("choice");
-var kt = document.getElementById("k-t");
-var kb = document.getElementById("k-b");
-var kb1 = document.getElementById("k-b-1");
-var role = document.getElementById("role");
-var role_1 = document.getElementById("role-1");
 kg()
 Mobile()
 kk()
