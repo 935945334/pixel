@@ -9,14 +9,14 @@
 #body-x{
 	margin: 0;
 	width: 100vw;
-	height: 100vh;
+	/*height: 100vh;*/
 	background: #1b1b1b;
 	overflow:hidden;
 }
 #body-y{
 	margin: 0;
 	width: 100vh;
-	height: 100vw;
+	/*height: 100vw;*/
 	background: #eee;
 }
 #coordinate{
