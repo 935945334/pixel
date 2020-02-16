@@ -2,7 +2,7 @@
 roleHeight()
 //点击门触发
 function xuanRen(){
-    alert(parseInt(role_1.height/3));
+    // alert(parseInt(role_1.height/3));
     // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
     //     // alert("苹果");
     //     if (window.orientation == 90 || window.orientation == -90) {
