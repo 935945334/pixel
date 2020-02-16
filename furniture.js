@@ -7,7 +7,7 @@ kk()
 function Mobile(){
 	if(window.orientation == 180 || window.orientation == 0){
 		//竖屏
-		document.body.style.height = window.innerHeight + "px";
+		document.body.style.height = screen.height + "px";
 		play.className = "play-Mobile-x";
 		play.style.width = window.innerHeight + "px";
         kl.style.height = "100vw";
