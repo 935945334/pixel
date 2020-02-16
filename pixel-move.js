@@ -112,7 +112,7 @@ function move(){
         var clientX = m_clientX;
         var clientY = m_clientY;
         window.clientX = clientX - parseInt(kt.offsetWidth/2);
-        window.clientY = clientY - parseInt(role_1.height/3);
+        window.clientY = clientY - parseInt(role_1.height/4);
     };
     
     roleX()
