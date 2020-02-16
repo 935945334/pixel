@@ -1,6 +1,7 @@
 
 roleHeight()
 function xuanRen(){
+    // alert(kb.offsetHeight);
     if (txt == 0) {
         document.getElementById("coordinate").style.display = "block";
         window.txt = 1;
@@ -66,37 +67,12 @@ function roleHeight(){
     // alert(kt.offsetHeight);
 }
 function get_canvas(ev, obj) {
-    // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
-    //     // alert("苹果");
-    //     if (window.orientation == 90 || window.orientation == -90) {
-    //         // alert("苹果");
-    //         // alert("横屏");
-    //     }else if(window.orientation == 180 || window.orientation == 0){
-    //         // alert("苹果");
-    //         // alert("竖屏");
-    //     }
-    // } else if (/(Android)/i.test(navigator.userAgent)) { 
-    //     // alert("安卓");
-    //     if (window.orientation == 90 || window.orientation == -90) {
-    //         // alert("安卓");
-    //         // alert("横屏");
-    //         m_clientX = ev.clientX - obj.offsetLeft;
-    //         m_clientY = ev.clientY - obj.offsetTop;
-    //     }else if(window.orientation == 180 || window.orientation == 0) {
-    //         // alert("安卓");
-    //         // alert("竖屏");
-    //         m_clientX = ev.clientX - kb.offsetHeight;
-    //         m_clientY = ev.clientY - kl.offsetWidth;
-    //     } 
-    // } else {
-    //     // alert("电脑");
-    // };
     if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         // alert("手机")
         if (window.orientation == 90 || window.orientation == -90) {
             // alert("横屏");
             m_clientX = ev.clientX - kl.offsetWidth;
-            m_clientY = ev.clientY - kb.offsetHeight;
+            m_clientY = ev.clientY - kt.offsetHeight;
         }else if(window.orientation == 180 || window.orientation == 0) {
             // alert("竖屏");
             m_clientX = ev.clientX - kb.offsetHeight;
@@ -134,7 +110,7 @@ function move(){
             // alert("定义坐标正常");
             var clientX = m_clientX;
             var clientY = m_clientY;
-            window.clientX = clientX - parseInt(window.innerHeight/2) ;
+            window.clientX = clientX - parseInt(window.innerWidth/2) + 30 ;
             window.clientY = clientY; 
         }else if(window.orientation == 180 || window.orientation == 0){
             // alert("竖屏");
