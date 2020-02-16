@@ -2,67 +2,40 @@
 roleHeight()
 //点击门触发
 function xuanRen(){
-    // alert(parseInt(role_1.height/3));
-    // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
-    //     // alert("苹果");
-    //     if (window.orientation == 90 || window.orientation == -90) {
-    //         alert("苹果");
-    //         alert("横屏");
-    //     }else if(window.orientation == 180 || window.orientation == 0){
-    //         alert("苹果");
-    //         alert("竖屏");
-    //     }
-    // } else if (/(Android)/i.test(navigator.userAgent)) { 
-    //     // alert("安卓");
-    //     if (window.orientation == 90 || window.orientation == -90) {
-    //         alert("安卓");
-    //         alert("横屏");
-    //     }else if(window.orientation == 180 || window.orientation == 0){
-    //         alert("安卓");
-    //         alert("竖屏");
-    //     }
+    // if (txt == 0) {
+    //     document.getElementById("coordinate").style.display = "block";
+    //     window.txt = 1;
+    // }else if (txt == 1) {
+    //     document.getElementById("coordinate").style.display = "none";
+    //     window.txt = 0;
     // }
-    if (txt == 0) {
-        document.getElementById("coordinate").style.display = "block";
-        window.txt = 1;
-    }else if (txt == 1) {
-        document.getElementById("coordinate").style.display = "none";
-        window.txt = 0;
-    }
-    
+
+
+
+
+
+    jc();//若函数运行中则终止运行
+    zt();//设置函数运行状态，t=1(运行中) t=0(未运行)
+    roleMX();
+    var i=0;
+    //向门X轴移动的mouseTime
+    mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
+        moveMX();  //执行向门X轴移动
+        i++  //执行一次i++
+    }, 5); 
 }
+
+
+
+
+
+
+
+
 //人物初始位置定位
 function roleHeight(){
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
-        // alert("苹果");
-        if (window.orientation == 90 || window.orientation == -90) {
-            // alert("苹果");
-            // alert("横屏");
-        }else if(window.orientation == 180 || window.orientation == 0){
-            // alert("苹果");
-            // alert("竖屏");
-        }
-    } else if (/(Android)/i.test(navigator.userAgent)) { 
-        // alert("安卓");
-        if (window.orientation == 90 || window.orientation == -90) {
-            // alert("安卓");
-            // alert("横屏");
-        }else if(window.orientation == 180 || window.orientation == 0){
-            // alert("安卓");
-            // alert("竖屏");
-        }
-    } else {
-        // alert("电脑");
-    };
-    // if(window.orientation == 180 || window.orientation == 0){
-    //     alert("横屏");
-    // }else if(window.orientation == 90 || window.orientation == -90){
-    //     alert("竖屏");
-    //     }
-    // role.style.marginTop = "70px";
     role.style.marginTop = kt.offsetHeight - 60 + "px"
     role.style.paddingTop = 70 + "px";
-    // role.style.paddingLeft = "500px"
     if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
         // alert("苹果")
         if (window.orientation == 90 || window.orientation == -90) {
@@ -81,11 +54,6 @@ function roleHeight(){
         // alert("电脑")
         role.style.paddingLeft = parseInt(kt.offsetWidth/2) - 30  + "px";
     };
-    
-    // role.style.paddingLeft = kt.offsetWidth/2;
-    
-    // role.style.marginLeft = - 30 + "px"
-    // alert(kt.offsetHeight);
 }
 //获取点击坐标
 function get_canvas(ev, obj) {
@@ -105,21 +73,6 @@ function get_canvas(ev, obj) {
         m_clientX = ev.clientX - obj.offsetLeft;
         m_clientY = ev.clientY - obj.offsetTop;
     }
-    // if (window.orientation == 90 || window.orientation == -90) {
-    //     m_clientX = ev.clientX - obj.offsetLeft;
-    //     m_clientY = ev.clientY - obj.offsetTop;
-    // }else if(window.orientation == 180 || window.orientation == 0) {
-    //     m_clientX = ev.clientX - kb.offsetHeight;
-    //     m_clientY = ev.clientY - kl.offsetWidth;
-    // } 
-    // if (screen.width > screen.height) {
-    //     m_clientX = ev.clientX - obj.offsetLeft;
-    //     m_clientY = ev.clientY - obj.offsetTop;
-    // }else if(screen.width < screen.height) {
-    //     m_clientX = ev.clientX - kb.offsetHeight;
-    //     m_clientY = ev.clientY - kl.offsetWidth;
-    // }
-
     document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
 }
 //开始移动
@@ -151,17 +104,6 @@ function move(){
         window.clientY = clientY - parseInt(role_1.height/3);
     };
     
-    // if (window.orientation == 90 || window.orientation == -90) {
-    //     var clientX = m_clientX;
-    //     var clientY = m_clientY;
-    //     window.clientX = clientX - parseInt(kt.offsetWidth/2) ;
-    //     window.clientY = clientY; 
-    // }else if(window.orientation == 180 || window.orientation == 0){
-    //     var clientX = -m_clientX;
-    //     var clientY = m_clientY;
-    //     window.clientX = clientX;
-    //     window.clientY = clientY - parseInt(window.innerHeight/2) + 30;
-    // }
     roleX()
     var i=0;
     mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
@@ -180,16 +122,8 @@ function move(){
                 // alert("电脑");
                 moveXX();
             };
-            // if (window.orientation == 90 || window.orientation == -90) {
-            //     // alert("横屏")
-            //     moveXX();
-            // }else if(window.orientation == 180 || window.orientation == 0){
-            //     // alert("竖屏")
-            //     moveXY()
-            // }   
-            i++  //执行一次i++
         }, 5);
-}
+    }
 
 function jc(){
     if (t == 1) {
@@ -248,13 +182,6 @@ function moveY(){
             // alert("电脑");
             moveYX();
         };
-        // if (window.orientation == 90 || window.orientation == -90) {
-        //     // alert("横屏")
-        //     moveYX();
-        // }else if(window.orientation == 180 || window.orientation == 0){
-        //      // alert("竖屏")
-        //     moveYY();   
-        // }   
         i++  //执行一次i++
     }, 5);
 }
@@ -316,21 +243,7 @@ function roleX(){
         }else if(coordinateX.value > clientX){
             role_1.src = role_left;
         }
-    };
-    // if (window.orientation == 90 || window.orientation == -90){
-    //     if (coordinateX.value < clientX) {
-    //         role_1.src = role_right;
-    //     }else if(coordinateX.value > clientX){
-    //         role_1.src = role_left;
-    //     }
-    // }else if(window.orientation == 180 || window.orientation == 0){
-    //     if (coordinateX.value < clientY) {
-    //         role_1.src = role_right;
-    //     }else if(coordinateX.value > clientY){
-    //         role_1.src = role_left;
-    //     }
-    // }
-    
+    };   
 }
 function roleY(){
     if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
@@ -360,19 +273,69 @@ function roleY(){
             role_1.src = role_top;
         }
     };
-    // if (window.orientation == 90 || window.orientation == -90){
-    //     if (coordinateY.value < clientY) {
-    //         role_1.src = role_bottom;
-    //     }else if(coordinateY.value > clientY){
-    //         role_1.src = role_top;
-    //     }
-    // }else if(window.orientation == 180 || window.orientation == 0){
-    //     if (coordinateY.value < clientX) {
-    //         role_1.src = role_bottom;
-    //     }else if(coordinateY.value > clientX){
-    //         role_1.src = role_top;
-    //     }
-    // }
+}
+
+//向门移动的功能区↓
+//向门X轴移动
+function moveMX(){
+    // alert("横屏")
+    if(coordinateX.value < 0){
+        coordinateX.value = parseInt(coordinateX.value) + 1;
+        role.style.marginLeft = coordinateX.value + "px";
+    }
+    else if(coordinateX.value > 0){
+        coordinateX.value = parseInt(coordinateX.value) - 1;
+        role.style.marginLeft = coordinateX.value + "px";
+    }
+    else if(coordinateX.value == 0){
+        clearInterval(mouseTime);
+        moveMY()
+    }
+}
+
+//向门Y轴移动的mouseTime
+function moveMY(){
+    roleMY()
+    var i=0;
+    mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
+        moveMYX();
+        i++  //执行一次i++
+    }, 5);
 }
 
 
+//向门Y轴移动
+function moveMYX(){
+    if(coordinateY.value < 0){
+        coordinateY.value = parseInt(coordinateY.value) + 1;
+        role.style.paddingTop = coordinateY.value + "px";
+    }
+    else if(coordinateY.value > 0){
+        coordinateY.value = parseInt(coordinateY.value) - 1;
+        role.style.paddingTop = coordinateY.value + "px";
+    }
+    else if(coordinateY.value == 0){
+        clearInterval(mouseTime);
+        var t = 0;
+        window.t = t;
+        role_1.src = role_img;
+    }
+}
+
+//向门Y轴移动时的贴图
+function roleMY(){
+    if (coordinateY.value < 0) {
+        role_1.src = role_bottom;
+    }else if(coordinateY.value > 0){
+        role_1.src = role_top;
+    }
+}
+//向门X轴移动时的贴图
+function roleMX(){
+    if (coordinateX.value < 0) {
+        role_1.src = role_right;
+    }else if(coordinateX.value > 0){
+        role_1.src = role_left;
+    }
+}
+//向门移动的功能区↑
