@@ -12,13 +12,13 @@ function moveK(){
 
 //点击门触发
 function xuanRen(){
-    // if (txt == 0) {
-    //     document.getElementById("coordinate").style.display = "block";
-    //     window.txt = 1;
-    // }else if (txt == 1) {
-    //     document.getElementById("coordinate").style.display = "none";
-    //     window.txt = 0;
-    // }
+    if (txt == 0) {
+        document.getElementById("coordinate").style.display = "block";
+        window.txt = 1;
+    }else if (txt == 1) {
+        document.getElementById("coordinate").style.display = "none";
+        window.txt = 0;
+    }
 
 
 
