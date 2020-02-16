@@ -1,11 +1,16 @@
 
+#movek{
+	/*background: #000;*/
+	width: 100%;
+	height: 100%;
+}
 #coordinate div{
 	background: #eee;
 }
-#role-1{
+/*#role-1{
 	border-style:solid;
 	border-width:1px;
-}
+}*/
 #body-x{
 	margin: 0;
 	width: 100vw;
@@ -85,19 +90,20 @@
 	background-size:auto 100%;
 	background-repeat: repeat-x;
 	position:relative;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 #k-b-1{
-	display: none;
-	pointer-events: none;
 	width: 100%;
-	height: 65%;
-	background:url(imges/diban-0.png);
-	background-size:auto 100%;
+	height: 100%;
+	z-index: 11;
+    position:absolute;
+    background:url(imges/diban-0.png);
+    background-size:auto 100%;
 	background-repeat: repeat-x;
-	position:absolute;
-	z-index: 22;
-	bottom: 0;
-
+	pointer-events: none;
 }
 #furniture{
 	/*background: #E9B94B;*/

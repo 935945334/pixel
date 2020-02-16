@@ -18,3 +18,4 @@ var furniture = document.getElementById("furniture");
 var choice = document.getElementById("choice");
 var kb1 = document.getElementById("k-b-1");
 var txt = 0;
+var movek = document.getElementById("movek");

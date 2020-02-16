@@ -1,5 +1,15 @@
 
 roleHeight()
+moveK()
+
+function moveK(){
+    movek.style.width = kb.offsetWidth - role_1.offsetWidth + 20 + "px";
+    movek.style.height = kb.offsetHeight + "px";
+    // kb1.style.height = kb.offsetHeight + "px";
+}
+
+
+
 //点击门触发
 function xuanRen(){
     // if (txt == 0) {
