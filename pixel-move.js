@@ -2,7 +2,7 @@
 roleHeight()
 //点击门触发
 function xuanRen(){
-    // alert(parseInt(window.innerHeight/2));
+    alert(parseInt(role_1.height/3));
     // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
     //     // alert("苹果");
     //     if (window.orientation == 90 || window.orientation == -90) {
@@ -134,21 +134,21 @@ function move(){
             var clientX = m_clientX;
             var clientY = m_clientY;
             window.clientX = clientX - parseInt(window.innerWidth/2) + 30 ;
-            window.clientY = clientY - 30; 
+            window.clientY = clientY - parseInt(role_1.height/3);
         }else if(window.orientation == 180 || window.orientation == 0){
             // alert("竖屏");
             // alert("定义坐标正常");
             var clientX = -m_clientX;
             var clientY = m_clientY;
-            window.clientX = clientX - 30;
+            window.clientX = clientX - parseInt(role_1.height/3);
             window.clientY = clientY - parseInt(window.innerHeight/2) + 30;
         }
     }else{
         // alert("电脑");
         var clientX = m_clientX;
         var clientY = m_clientY;
-        window.clientX = clientX - parseInt(kt.offsetWidth/2) ;
-        window.clientY = clientY - 30; 
+        window.clientX = clientX - parseInt(kt.offsetWidth/2);
+        window.clientY = clientY - parseInt(role_1.height/3);
     };
     
     // if (window.orientation == 90 || window.orientation == -90) {
