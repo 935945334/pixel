@@ -1,12 +1,14 @@
 
 roleHeight()
 function xuanRen(){
-    if (t == 0) {
-        alert(m_clientX);
+    if (txt == 0) {
+        document.getElementById("coordinate").style.display = "block";
+        window.txt = 1;
+    }else if (txt == 1) {
+        document.getElementById("coordinate").style.display = "none";
+        window.txt = 0;
     }
-    if (t == 1) {
-        alert(m_clientX);
-    }
+    
 }
 function roleHeight(){
     if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
