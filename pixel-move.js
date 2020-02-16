@@ -1,26 +1,27 @@
 
 roleHeight()
+//点击门触发
 function xuanRen(){
-    // alert(kb.offsetHeight);
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
-        // alert("苹果");
-        if (window.orientation == 90 || window.orientation == -90) {
-            alert("苹果");
-            alert("横屏");
-        }else if(window.orientation == 180 || window.orientation == 0){
-            alert("苹果");
-            alert("竖屏");
-        }
-    } else if (/(Android)/i.test(navigator.userAgent)) { 
-        // alert("安卓");
-        if (window.orientation == 90 || window.orientation == -90) {
-            alert("安卓");
-            alert("横屏");
-        }else if(window.orientation == 180 || window.orientation == 0){
-            alert("安卓");
-            alert("竖屏");
-        }
-    }
+    // alert(parseInt(window.innerHeight/2));
+    // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
+    //     // alert("苹果");
+    //     if (window.orientation == 90 || window.orientation == -90) {
+    //         alert("苹果");
+    //         alert("横屏");
+    //     }else if(window.orientation == 180 || window.orientation == 0){
+    //         alert("苹果");
+    //         alert("竖屏");
+    //     }
+    // } else if (/(Android)/i.test(navigator.userAgent)) { 
+    //     // alert("安卓");
+    //     if (window.orientation == 90 || window.orientation == -90) {
+    //         alert("安卓");
+    //         alert("横屏");
+    //     }else if(window.orientation == 180 || window.orientation == 0){
+    //         alert("安卓");
+    //         alert("竖屏");
+    //     }
+    // }
     if (txt == 0) {
         document.getElementById("coordinate").style.display = "block";
         window.txt = 1;
@@ -30,6 +31,7 @@ function xuanRen(){
     }
     
 }
+//人物初始位置定位
 function roleHeight(){
     if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
         // alert("苹果");
@@ -85,6 +87,7 @@ function roleHeight(){
     // role.style.marginLeft = - 30 + "px"
     // alert(kt.offsetHeight);
 }
+//获取点击坐标
 function get_canvas(ev, obj) {
     if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         // alert("手机")
@@ -119,10 +122,11 @@ function get_canvas(ev, obj) {
 
     document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
 }
+//开始移动
 function move(){
     jc();//若函数运行中则终止运行
     zt();//设置函数运行状态，t=1(运行中) t=0(未运行)
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
+    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
         // alert("手机");
         if (window.orientation == 90 || window.orientation == -90) {
             // alert("横屏");
@@ -130,13 +134,13 @@ function move(){
             var clientX = m_clientX;
             var clientY = m_clientY;
             window.clientX = clientX - parseInt(window.innerWidth/2) + 30 ;
-            window.clientY = clientY; 
+            window.clientY = clientY - 30; 
         }else if(window.orientation == 180 || window.orientation == 0){
             // alert("竖屏");
             // alert("定义坐标正常");
             var clientX = -m_clientX;
             var clientY = m_clientY;
-            window.clientX = clientX;
+            window.clientX = clientX - 30;
             window.clientY = clientY - parseInt(window.innerHeight/2) + 30;
         }
     }else{
@@ -144,7 +148,7 @@ function move(){
         var clientX = m_clientX;
         var clientY = m_clientY;
         window.clientX = clientX - parseInt(kt.offsetWidth/2) ;
-        window.clientY = clientY; 
+        window.clientY = clientY - 30; 
     };
     
     // if (window.orientation == 90 || window.orientation == -90) {

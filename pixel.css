@@ -22,7 +22,7 @@
 #coordinate{
 	z-index: 10;
 	position: absolute;
-	/*display: none;*/
+	display: none;
 }
 #play{
 	display: -webkit-flex;
