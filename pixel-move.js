@@ -107,7 +107,7 @@ function move(){
             // alert("定义坐标正常");
             var clientX = m_clientX;
             var clientY = m_clientY;
-            window.clientX = clientX - parseInt(kt.offsetWidth/2) ;
+            window.clientX = clientX - parseInt(window.innerHeight/2) ;
             window.clientY = clientY; 
         }else if(window.orientation == 180 || window.orientation == 0){
             // alert("竖屏");
@@ -148,7 +148,7 @@ function move(){
                 }else if(window.orientation == 180 || window.orientation == 0){
                     // alert("苹果");
                     // alert("竖屏");
-                    moveXX();
+                    moveXY();
                 }
             }else{
                 // alert("电脑");
