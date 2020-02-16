@@ -35,6 +35,7 @@ window.addEventListener('orientationchange',function(){
 	
 });
 function kk(){
+	k.style.width = play.offsetWidth - kl.offsetWidth*2 + "px";
     var w = k.offsetWidth;
     var h = k.offsetHeight;
     furniture.style.width = w + "px";
@@ -44,5 +45,5 @@ function kg(){
 	document.getElementById("tips1").innerHTML = "屏幕宽度：" + screen.width + " 屏幕高度：" + screen.height;
 	document.getElementById("tips3").innerHTML = "人物宽度：" + role_1.width + " 人物高度：" + role_1.height;
 	document.getElementById("tips2").innerHTML = "body宽度：" + document.body.offsetWidth + " body高度：" + document.body.offsetHeight;
-	document.getElementById("tips4").innerHTML = "PLAY宽度：" + play.offsetWidth + " PLAY高度：" + play.offsetHeight;
+	document.getElementById("tips4").innerHTML = "PLAY宽度：" + play.clientWidth + " PLAY高度：" + play.clientHeight;
 }
