@@ -90,7 +90,7 @@ function get_canvas(ev, obj) {
     //     } 
     // } else {
     //     // alert("电脑");
-    };
+    // };
     if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         // alert("手机")
         if (window.orientation == 90 || window.orientation == -90) {
