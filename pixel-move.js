@@ -80,8 +80,9 @@ function get_canvas(ev, obj) {
         } 
     }else{
         // alert("电脑")
-        m_clientX = ev.clientX - obj.offsetLeft;
-        m_clientY = ev.clientY - obj.offsetTop;
+        // alert(obj.offsetTop)
+        m_clientX = ev.clientX - kb.offsetLeft;
+        m_clientY = ev.clientY - kb.offsetTop;
     }
     document.getElementById("tips").innerHTML = "当前坐标：X：" + m_clientX + " ,Y：" + m_clientY;
 }
