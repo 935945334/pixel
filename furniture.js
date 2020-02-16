@@ -14,6 +14,7 @@ function Mobile(){
         kr.style.height = "100vw";
 	}else if(window.orientation == 90 || window.orientation == -90){
         //横屏
+        alert("横屏");
         play.className = "play-Mobile-y";
         document.body.style.height = screen.height + "px";
         play.style.height = screen.height + "px";
