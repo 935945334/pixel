@@ -5,7 +5,11 @@ kk()
 
 
 function Mobile(){
-	if(window.orientation == 180 || window.orientation == 0){
+	if (/(iPad)/i.test(navigator.userAgent)){
+		play.className = "play-Mobile-pad";
+    	// alert("iPad")
+    }
+	if(window.orientation == 180 || window.orientation == 0 && /(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)){
 		//竖屏
 		
 		play.className = "play-Mobile-x";
@@ -13,13 +17,13 @@ function Mobile(){
 		play.style.width = window.innerHeight + "px";
         kl.style.height = "100vw";
         kr.style.height = "100vw";
-	}else if(window.orientation == 90 || window.orientation == -90){
+	}else if(window.orientation == 90 || window.orientation == -90 && /(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)){
         //横屏
         play.className = "play-Mobile-y";
         play.style.width = window.innerWidth + "px";
         kl.style.height = "100vh";
         kr.style.height = "100vh";
-        }
+    }
 }
 //屏幕选择时重新设定方向
 window.addEventListener('orientationchange',function(){

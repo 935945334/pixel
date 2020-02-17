@@ -2,8 +2,8 @@ body{
 	cursor:url(imges/Pointer.ico),auto;
 }
 #movek{
-	background: #000;
-	width: 100%;
+	/*background: #000;*/
+	width: 90%;
 	height: 100%;
 }
 #coordinate div{
@@ -26,6 +26,7 @@ body{
 	height: 100vw;
 	background: #eee;
 }
+
 #coordinate{
 	z-index: 10;
 	position: absolute;
@@ -54,6 +55,12 @@ body{
 .play-Mobile-y{
 	width: 100vw;
 	height: 100vh;
+}
+.play-Mobile-pad{
+	width: 100%;
+	max-width: 812px;
+	margin: 0 auto;
+	margin-top: 100px;
 }
 #k{
 	width: 100%;

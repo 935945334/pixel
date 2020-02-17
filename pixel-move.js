@@ -1,12 +1,6 @@
 
 roleHeight()
-moveK()
 
-function moveK(){
-    movek.style.width = kb.offsetWidth - role_1.offsetWidth + 20 + "px";
-    movek.style.height = kb.offsetHeight + "px";
-    // kb1.style.height = kb.offsetHeight + "px";
-}
 
 
 
@@ -46,7 +40,7 @@ function xuanRen(){
 function roleHeight(){
     role.style.marginTop = kt.offsetHeight - 60 + "px"
     role.style.paddingTop = 70 + "px";
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
+    if (/(iPhone|iPod|iOS)/i.test(navigator.userAgent)) { 
         // alert("苹果")
         if (window.orientation == 90 || window.orientation == -90) {
             role.style.paddingLeft = parseInt(window.innerWidth/2) - 60 + "px";
@@ -60,6 +54,9 @@ function roleHeight(){
         }else if(window.orientation == 180 || window.orientation == 0){
             role.style.paddingLeft = parseInt(window.innerHeight/2) - 60  + "px";
         }
+    } else if (/(iPad)/i.test(navigator.userAgent)) {
+        //alert(navigator.userAgent); 
+        role.style.paddingLeft = parseInt(window.innerWidth/2) - 60 + "px";
     } else {
         // alert("电脑")
         role.style.paddingLeft = parseInt(kt.offsetWidth/2) - 30  + "px";
@@ -67,7 +64,7 @@ function roleHeight(){
 }
 //获取点击坐标
 function get_canvas(ev, obj) {
-    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+    if (/(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         // alert("手机")
         if (window.orientation == 90 || window.orientation == -90) {
             // alert("横屏");
@@ -90,7 +87,7 @@ function get_canvas(ev, obj) {
 function move(){
     jc();//若函数运行中则终止运行
     zt();//设置函数运行状态，t=1(运行中) t=0(未运行)
-    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+    if (/(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
         // alert("手机");
         if (window.orientation == 90 || window.orientation == -90) {
             // alert("横屏");
@@ -118,7 +115,7 @@ function move(){
     roleX()
     var i=0;
     mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
-            if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+            if (/(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
                 // alert("手机");
                 if (window.orientation == 90 || window.orientation == -90) {
                     // alert("苹果");
@@ -178,7 +175,7 @@ function moveY(){
     var i=0;
     
     mouseTime = setInterval(function (){  //setInterval可一直执行内部函数
-        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+        if (/(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
             // alert("手机");
             if (window.orientation == 90 || window.orientation == -90) {
                 // alert("苹果");
@@ -228,7 +225,7 @@ function moveYY(){
 }
 
 function roleX(){
-    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+    if (/(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
         // alert("手机");
         if (window.orientation == 90 || window.orientation == -90) {
             // alert("苹果");
@@ -257,7 +254,7 @@ function roleX(){
     };   
 }
 function roleY(){
-    if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
+    if (/(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)) { 
         // alert("手机");
         if (window.orientation == 90 || window.orientation == -90) {
             // alert("苹果");
