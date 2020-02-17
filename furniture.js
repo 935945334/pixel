@@ -29,8 +29,10 @@ window.addEventListener('orientationchange',function(){
 	// alert(window.orientation);
 	if(window.orientation == 180 || window.orientation == 0){
 		play.style.width = window.innerWidth + "px";
+		k.style.width = play.offsetWidth - kl.offsetWidth*2 + "px";
 	}else if(window.orientation == 90 || window.orientation == -90){
 		play.style.width = window.innerHeight + "px";
+		k.style.width = play.offsetHeight - kl.offsetWidth*2 + "px";
 	}
 	
 });

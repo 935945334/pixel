@@ -2,7 +2,7 @@ body{
 	cursor:url(imges/Pointer.ico),auto;
 }
 #movek{
-	/*background: #000;*/
+	background: #000;
 	width: 100%;
 	height: 100%;
 }
