@@ -15,7 +15,7 @@ function xuanRen(){
     }
 
 
-
+    console.log(kt_w)
 
 
     jc();//若函数运行中则终止运行
@@ -347,3 +347,46 @@ function roleMX(){
     }
 }
 //向门移动的功能区↑
+
+// ktl.style.width = parseInt((kt_w - 48)/2) + "px";
+// ktr.style.width = parseInt((kt_w - 48)/2) + "px";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

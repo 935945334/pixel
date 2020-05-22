@@ -9,7 +9,10 @@
 </head>
 <body id="body-x">
 	<div id="play" class="play-pc">
-		<img src="imges/k-l.png" alt="" id="k-l">
+		<idv id="k-l">
+			<img src="imges/k-l-t.png" alt="">
+			<img src="imges/k-l-b.png" alt="">
+		</idv>
 		<div id="k">
 			<div id="coordinate">
 				<input autocomplete="off" type="text" id="coordinate-x"  value="0">
@@ -27,20 +30,151 @@
 					<img src="imges/Abigail/Abigail.png" alt="" id="role-1">
 				</div>
 			</div>
+			
 			<div id="k-t">
+				<div id="k-b-top"></div>
+				<div id="k-t-l">
+					<div id="k-t-l-1" class="k-t-l-div">
+						<img src="imges/furniture/k-t/6.png" alt="">
+					</div>
+					<div id="k-t-l-2" class="k-t-l-div">
+						<img src="imges/furniture/k-t/1.png" alt="">
+					</div>
+					<div id="k-t-l-3" class="k-t-l-div">
+						<img src="imges/furniture/k-t/5.png" alt="">
+					</div>
+					<div id="k-t-l-4" class="k-t-l-div">
+						<img src="imges/furniture/k-t/23.png" alt="">
+					</div>
+					<div id="k-t-l-5" class="k-t-l-div">
+						<img src="imges/furniture/k-t/0.png" alt="">
+					</div>
+					<div id="k-t-l-6" class="k-t-l-div">
+						<img src="imges/furniture/k-t/2.png" alt="">
+					</div>
+				</div>
 				<div id="k-t-m" onclick="xuanRen();">
 					<img src="imges/furniture/men.png" alt="">
 				</div>
-				<!-- <div id="m-y" onclick="xuanRen();">
-					<img src="imges/furniture/men-y.png" alt="">
-				</div> -->
+				<div id="k-t-r">
+					<div id="k-t-r-1" class="k-t-r-div">
+						<img src="imges/furniture/k-t/22.png" alt="">
+					</div>
+					<div id="k-t-r-2" class="k-t-r-div">
+						<img src="imges/furniture/k-t/0.png" alt="">
+					</div>
+					<div id="k-t-r-3" class="k-t-r-div">
+						<img src="imges/furniture/k-t/34.png" alt="">
+					</div>
+					<div id="k-t-r-4" class="k-t-r-div">
+						<img src="imges/furniture/k-t/0.png" alt="">
+					</div>
+					<div id="k-t-r-5" class="k-t-r-div">
+						<img src="imges/furniture/k-t/1.png" alt="">
+					</div>
+					<div id="k-t-r-6" class="k-t-r-div">
+						<img src="imges/furniture/k-t/4.png" alt="">
+					</div>
+				</div>
+
 			</div>
 			<div id="k-b">
 				<div id="movek" onmousemove="get_canvas(event,this)" onclick="move();"></div>
-				<div id="k-b-1"></div>
+				<div id="k-b-1">
+					<div id="k-b-t">
+						<div id="k-b-t-l">
+							<div id="k-b-t-l-div-1" class="k-b-t-l-div">
+								<img src="imges/furniture/k-b-t/16.png" alt="">
+							</div>
+							<div id="k-b-t-l-div-2" class="k-b-t-l-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+							<div id="k-b-t-l-div-3" class="k-b-t-l-div">
+								<img src="imges/furniture/k-b-t/39.png" alt="">
+							</div>
+							<div id="k-b-t-l-div-4" class="k-b-t-l-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+							<div id="k-b-t-l-div-5" class="k-b-t-l-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+							<div id="k-b-t-l-div-6" class="k-b-t-l-div">
+								<img src="imges/furniture/k-b-t/29.png" alt="">
+							</div>
+						</div>
+						<div id="k-b-t-r">
+							<div id="k-b-t-r-div-1" class="k-b-t-r-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+							<div id="k-b-t-r-div-2" class="k-b-t-r-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+							<div id="k-b-t-r-div-3" class="k-b-t-r-div">
+								<img src="imges/furniture/k-b-t/2.png" alt="">
+							</div>
+							<div id="k-b-t-r-div-4" class="k-b-t-r-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+							<div id="k-b-t-r-div-5" class="k-b-t-r-div">
+								<img src="imges/furniture/k-b-t/1.png" alt="">
+							</div>
+							<div id="k-b-t-r-div-6" class="k-b-t-r-div">
+								<img src="imges/furniture/k-b-t/0.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div id="k-b-b">
+						<div id="k-b-b-div-1" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/17.png" alt="">
+						</div>
+						<div id="k-b-b-div-2" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/15.png" alt="">
+						</div>
+						<div id="k-b-b-div-3" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/32.png" alt="">
+						</div>
+						<div id="k-b-b-div-4" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-5" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-6" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/34.png" alt="">
+						</div>
+						<div id="k-b-b-div-7" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-8" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-9" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/16.png" alt="">
+						</div>
+						<div id="k-b-b-div-10" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-11" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-12" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/0.png" alt="">
+						</div>
+						<div id="k-b-b-div-13" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/2.png" alt="">
+						</div>
+						<div id="k-b-b-div-14" class="k-b-b-div">
+							<img src="imges/furniture/k-b-b/3.png" alt="">
+						</div>
+					</div>
+					<div id="k-b-bottom"></div>
+				</div>
 			</div>
 		</div>
-		<img src="imges/k-r.png" alt="" id="k-r">
+		<idv id="k-r">
+			<img src="imges/k-r-t.png" alt="">
+			<img src="imges/k-r-b.png" alt="">
+		</idv>
 	</div>
 </body>
 <script src="pixel-variable.js"></script>
