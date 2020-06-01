@@ -297,7 +297,7 @@ function moveMX(){
     }
     else if(coordinateX.value == 0){
         clearInterval(mouseTime);
-        moveMY()
+        moveMY();
     }
 }
 
@@ -328,6 +328,8 @@ function moveMYX(){
         window.t = t;
         role_1.src = role_img;
         xuan_ren.style.display = "flex";
+        menu.style.display = "block";
+        xuan_ren_img.style.display = "none";
         
 
     }
