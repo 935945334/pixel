@@ -5,8 +5,8 @@ body{
 }
 
 #movek{
-	background: #000;
-	opacity: 0.5;
+	/*background: #000;
+	opacity: 0.5;*/
 	width: 86%;
 	height: 60%;
 	z-index: 20;
@@ -81,7 +81,7 @@ body{
 #k-t{
 	width: 100%;
 	height: 35%;
-	background:url(imges/qiang-5.png);
+	background:url(imges/wall/5.png);
 	background-size:auto 100%;
 	background-repeat: repeat-x;
 	position:relative;
@@ -100,7 +100,7 @@ body{
 #k-b{
 	width: 100%;
 	height: 65%;
-	background:url(imges/diban-1.png);
+	background:url(imges/floor/1.png);
 	background-size:auto 100%;
 	background-repeat: repeat-x;
 	position:relative;
@@ -444,6 +444,8 @@ input{
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    position: absolute;
+    z-index: 60;
 	
 }
 .k-b-b-div{
@@ -463,6 +465,7 @@ input{
 	background:url(imges/k-x.png);
 	position: absolute;
 	bottom: 0;
+	z-index: 100;
 }
 #k-b-top{
 	width: 100%;
@@ -496,8 +499,39 @@ input{
 	max-height: 150%;
 	pointer-events: none;
 }
+#xuan_ren{
+	width: 100%;
+	height: 100%;
+	background: #1b1b1b;
+	position: absolute;
+	z-index: 101;
+	display: -webkit-flex;
+    display: flex;
+    display: none;
 
-
-
-
+}
+#xuan_ren_img{
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: none;
+}
+#xuan_ren_img img{
+	width: 74px;
+	height: 74px;
+	pointer-events: auto;
+}
+#menu{
+	margin: auto;
+	width: 480px;
+}
+#menu img{
+	pointer-events: auto;
+}
 

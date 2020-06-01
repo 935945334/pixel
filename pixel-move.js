@@ -6,16 +6,16 @@ roleHeight()
 
 //点击门触发
 function xuanRen(){
-    if (txt == 0) {
-        document.getElementById("coordinate").style.display = "block";
-        window.txt = 1;
-    }else if (txt == 1) {
-        document.getElementById("coordinate").style.display = "none";
-        window.txt = 0;
-    }
+    // if (txt == 0) {
+    //     document.getElementById("coordinate").style.display = "block";
+    //     window.txt = 1;
+    // }else if (txt == 1) {
+    //     document.getElementById("coordinate").style.display = "none";
+    //     window.txt = 0;
+    // }
 
 
-    console.log(kt_w)
+
 
 
     jc();//若函数运行中则终止运行
@@ -327,6 +327,9 @@ function moveMYX(){
         var t = 0;
         window.t = t;
         role_1.src = role_img;
+        xuan_ren.style.display = "flex";
+        
+
     }
 }
 
@@ -347,6 +350,36 @@ function roleMX(){
     }
 }
 //向门移动的功能区↑
+
+xuan_ren_img.addEventListener("click",function(e){
+    console.log(e.target.index);
+    var list = [Abigail,Haley,Leah,Maru,Penny,Emily,Alex,Elliott,Harvey,Sam,Sebastian,Shane];
+    var name = list[e.target.index];
+    for (var i = 0; i < Arr.length; i++) {
+        var n = "imges/furniture/k-t/";
+        if (i > 11 && i < 24) {
+            n = "imges/furniture/k-b-t/";
+        }else if (i > 23) {
+            n = "imges/furniture/k-b-b/";
+        }
+        Arr[i].src = n + name[i];
+    }
+    kt.style.background = "url(imges/wall/" + name[39] + ".png) 0% 0% / auto 100%";
+    kb.style.background = "url(imges/floor/" + name[38] + ".png) 0% 0% / auto 100%";
+    xuan_ren.style.display = "none";
+})
+
+function neighbor() {
+    menu.style.display = "none";
+    xuan_ren_img.style.display = "flex";
+}
+function renovation() {
+    
+}
+
+
+
+
 
 // ktl.style.width = parseInt((kt_w - 48)/2) + "px";
 // ktr.style.width = parseInt((kt_w - 48)/2) + "px";
