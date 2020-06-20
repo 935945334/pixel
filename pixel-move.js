@@ -330,7 +330,7 @@ function moveMYX(){
         xuan_ren.style.display = "flex";
         menu.style.display = "block";
         xuan_ren_img.style.display = "none";
-        
+        document.getElementById("men").src = "imges/furniture/men.png";
 
     }
 }
@@ -352,6 +352,7 @@ function roleMX(){
     }
 }
 //向门移动的功能区↑
+
 
 xuan_ren_img.addEventListener("click",function(e){
     console.log(e.target.index);
@@ -376,7 +377,23 @@ function neighbor() {
     xuan_ren_img.style.display = "flex";
 }
 function renovation() {
-    
+    console.log("renovation");
+    for (var i = 0; i < Arr.length; i++) {
+        var n = "imges/furniture/k-t/";
+        if (i > 11 && i < 24) {
+            n = "imges/furniture/k-b-t/";
+        }else if (i > 23) {
+            n = "imges/furniture/k-b-b/";
+        }
+        Arr[i].src = n + install[i];
+    }
+    for (var i = 0; i < installArr.length; i++) {
+        installArr[i].style.pointerEvents = "auto";
+        installArr[i].index = i;
+        // console.log(installArr[i].index)
+    }
+    xuan_ren.style.display = "none";
+    movek.style.pointerEvents = "none";
 }
 
 
@@ -386,34 +403,166 @@ function renovation() {
 // ktl.style.width = parseInt((kt_w - 48)/2) + "px";
 // ktr.style.width = parseInt((kt_w - 48)/2) + "px";
 
+var renovation_Num;
+var renovation_img;
+var k = document.getElementById("k");
+k.addEventListener("click",function(e){
+    if (e.target.index != undefined) {
+        inventory.style.display = "flex";
+        renovation_Num = e.target.index;
+        establish_fun()
+    }
+    console.log(renovation_Num);
+})
+
+function determine() {
+    
+    Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png";
+    console.log(installArr[renovation_Num])
+    inventory.style.display = "none";
+    icon_box.innerHTML = "";
+    inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
+
+}
+function cancel() {
+    console.log("cancel")
+    inventory.style.display = "none";
+    icon_box.innerHTML = "";
+    inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
+
+}
+var ICON = "k-t";
+var ICON_Num = 70;
+
+var icon_Num_1;
+var scrollbar_H;
+window.onload = function() {
+    
+    
+    
+}
 
 
 
 
 
+function establish_fun() {
+    console.log(renovation_Num)
+    if (renovation_Num < 12) {
+        ICON = "k-t";
+        ICON_Num = 70;
+        inventory_t_t.style.height = "138px"
+        var ttt = parseInt(inventory_l_m.offsetHeight/5);
+        inventory_l_img.style.top = ttt + "px"
+    }else if (renovation_Num > 23) {
+        ICON = "k-b-b";
+        ICON_Num = 76;
+        inventory_t_t.style.height = "38px"
+        // var ttt = parseInt(inventory_l_m.offsetHeight/5);
+        // inventory_l_img.style.marginTop = ttt + "px" 
+    }else{
+        ICON = "k-b-t";
+        ICON_Num = 92;
+        var hhh = parseInt(inventory_t.offsetHeight/2);
+        inventory_t_t.style.height = hhh + "px"
+        var ttt = parseInt(inventory_t.offsetHeight/4);
+        inventory_l_img.style.top = ttt + "px"
+    }
+    console.log(ICON)
+    for (var i = 0 ; i < ICON_Num; i++) {
+
+        var div = document.createElement("div");
+        div.style.background = "url(imges/furniture/" + ICON + "/icon.png)";
+        div.index = i;
+        div.style.backgroundPosition = i*-48 + "px";
+        icon_box.appendChild(div).className = "icon";
+    }
+    if (70%parseInt(icon_box.offsetWidth/60) != 0) {//空按钮,填充空位
+        icon_Num_1 = parseInt(icon_box.offsetWidth/60) - (70%parseInt(icon_box.offsetWidth/60))
+    }else{
+        icon_Num_1 = 0;
+    }
+    icon_box.style.width = inventory_r_m_1.offsetWidth -20 + "px";
+    inventory_r_m_1.style.height = inventory_l_m_2.offsetHeight + "px";
+    icon_box_H = inventory_r_m_1.offsetHeight - icon_box.offsetHeight;
+    scrollbar_H = (scrollbar.offsetHeight-30)/(icon_box.offsetHeight-inventory_l_m_2.offsetHeight);
+}
+
+
+var iconArr = document.getElementsByClassName("icon");
+for (var i = 0 ; i < iconArr.length; i++) {
+    iconArr[i].index = i;
+    // console.log(iconArr[i].index)
+}
+
+
+icon_box.addEventListener("click",function(e){
+    console.log(ICON)
+    if (e.target.index != undefined) {
+        inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"
+    }
+    renovation_img = e.target.index;
+    inventory_l_img.style.width = T_width[renovation_img]*48 + "px"
+    inventory_l_img.style.marginLeft = Math.abs(T_width[renovation_img]-3)*24 + "px"
+    // console.log(e.target.index)
+
+})
+var X = 0;
+var Y = 0;
+var boxT = 0;
+var boxL = 0;
+inventory_r_m_1.addEventListener("touchstart", function(e) {//鼠标移入农场时开启农场移动状态
+    //获取坐标
+    X = e.targetTouches[0].clientX;
+    Y = e.targetTouches[0].clientY;
+    //获取偏移量
+    boxT = icon_box.offsetTop;
+    boxL = icon_box.offsetLeft;
+})
 
 
 
 
+window.addEventListener('touchmove', function(e) {
+    var icon_X = e.targetTouches[0].clientX;
+    var icon_Y = e.targetTouches[0].clientY;
+    icon_L = icon_X - (X + boxT);
+    icon_T = icon_Y - (Y - boxT);
+    if(window.orientation == 180 || window.orientation == 0 && /(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)){
+        //竖屏
+        if (-icon_L > 0) {
+            icon_L = 0;
+        }
+        else if (-icon_L < icon_box_H) {
+            icon_L = -icon_box_H;
+        }
+        icon_box.style.top = -icon_L + "px";
+        scrollbar_div.style.top = icon_L*scrollbar_H + "px";
+    }else if(window.orientation == 90 || window.orientation == -90 && /(iPhone|iPod|iOS|Android)/i.test(navigator.userAgent)){
+        //横屏
+        if (icon_T > 0) {
+            icon_T = 0;
+        }else if (icon_T < icon_box_H) {
+            icon_T = icon_box_H;
+        }
+        icon_box.style.top = icon_T + "px";
+        scrollbar_div.style.top = -(icon_T*scrollbar_H) + "px";
+    }
+})
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.addEventListener('touchend', function() {//结束移动函数
+    // console.log(icon_box.offsetTop)
+    // if (icon_box.offsetTop > 0) {
+    //     icon_box.style.top = "0px";
+    //     scrollbar_div.style.top = "0px";
+    // }else if (icon_box.offsetTop < icon_box_H) {
+    //     icon_box.style.top = icon_box_H + "px";
+    //     scrollbar_div.style.top = scrollbar.offsetHeight - 30 + "px";
+    // }
+})
 
 
 
