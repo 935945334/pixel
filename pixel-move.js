@@ -457,9 +457,10 @@ function establish_fun() {
     }else if (renovation_Num > 23) {
         ICON = "k-b-b";
         ICON_Num = 76;
-        inventory_t_t.style.height = "38px"
-        // var ttt = parseInt(inventory_l_m.offsetHeight/5);
-        // inventory_l_img.style.marginTop = ttt + "px" 
+        inventory_t_t.style.height = "38px";
+        var ttt = inventory_t.offsetHeight - 160;
+        console.log(inventory_t.offsetHeight)
+        inventory_l_img.style.top = ttt + "px"
     }else{
         ICON = "k-b-t";
         ICON_Num = 92;
@@ -500,10 +501,18 @@ icon_box.addEventListener("click",function(e){
     console.log(ICON)
     if (e.target.index != undefined) {
         inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"
+        if (renovation_Num < 12) {
+            var ARR = ARR_width[0];
+        }else if (renovation_Num > 23) {
+            var ARR = ARR_width[2];
+        }else{
+            var ARR = ARR_width[1];
+        }
     }
     renovation_img = e.target.index;
-    inventory_l_img.style.width = T_width[renovation_img]*48 + "px"
-    inventory_l_img.style.marginLeft = Math.abs(T_width[renovation_img]-3)*24 + "px"
+    
+    inventory_l_img.style.width = ARR[renovation_img]*48 + "px"
+    inventory_l_img.style.marginLeft = Math.abs(ARR[renovation_img]-3)*24 + "px"
     // console.log(e.target.index)
 
 })
