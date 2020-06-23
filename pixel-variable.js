@@ -44,12 +44,15 @@ var scrollbar_div = document.getElementById("scrollbar-div");
 var inventory_l_img = document.getElementById("inventory-l-img");
 var inventory_t = document.getElementById("inventory-t");
 var inventory_t_t = document.getElementById("inventory-t-t");
-
+var IMG_width;
 var T_width = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3];
 var M_width = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,1,1,4,3,3];
 var B_width = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,1,3,3,3,2,1,3];
 var ARR_width = [T_width,M_width,B_width];
-console.log(B_width.length)
+var save_t = [0,0,0,0,0,0,0,0,0,0,0];
+var save_m = [0,0,0,0,0,0,0,0,0,0,0,0];
+var save_b = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+console.log(save_b.length)
 for (var x = 0; x < ArrArr.length; x++) {
     for (var y = 0; y < ArrArr[x].length; y++) {
     	installArr.push((ArrArr[x])[y]);

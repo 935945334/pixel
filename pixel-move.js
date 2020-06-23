@@ -416,20 +416,35 @@ k.addEventListener("click",function(e){
 })
 
 function determine() {
-    
-    Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png";
+    if (ICON == "k-b-t" && renovation_img > 85) {
+        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
+    }else if (ICON == "k-b-b" && renovation_img > 67) {
+        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
+    }else{
+        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png"  
+    }
+    // Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png";
     console.log(installArr[renovation_Num])
     inventory.style.display = "none";
     icon_box.innerHTML = "";
     inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
-
+    icon_box.style.top = "0px";
+    scrollbar_div.style.top = "0px";
+    if (IMG_width > 1) {
+        for (var i = 1; i < IMG_width; i++) {
+        Arr[renovation_Num + i].src = "imges/furniture/" + ICON + "/0.png";
+        console.log(Arr[renovation_Num + i].parentNode)
+        Arr[renovation_Num + i].parentNode.style.pointerEvents = "none";
+        }
+    }
 }
 function cancel() {
     console.log("cancel")
     inventory.style.display = "none";
     icon_box.innerHTML = "";
     inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
-
+    icon_box.style.top = "0px";
+    scrollbar_div.style.top = "0px";
 }
 var ICON = "k-t";
 var ICON_Num = 70;
@@ -451,19 +466,43 @@ function establish_fun() {
     if (renovation_Num < 12) {
         ICON = "k-t";
         ICON_Num = 70;
+        if (renovation_Num == 11) {
+            var Range = 1;
+        }
+        if (renovation_Num == 10) {
+            var Range = 2;
+        }
+        var ARR = ARR_width[0];
         inventory_t_t.style.height = "138px"
         var ttt = parseInt(inventory_l_m.offsetHeight/5);
         inventory_l_img.style.top = ttt + "px"
     }else if (renovation_Num > 23) {
         ICON = "k-b-b";
         ICON_Num = 76;
+        if (renovation_Num == 37) {
+            var Range = 1;
+        }
+        if (renovation_Num == 36) {
+            var Range = 2;
+        }
+        var ARR = ARR_width[2];
         inventory_t_t.style.height = "38px";
         var ttt = inventory_t.offsetHeight - 160;
         console.log(inventory_t.offsetHeight)
         inventory_l_img.style.top = ttt + "px"
     }else{
         ICON = "k-b-t";
-        ICON_Num = 92;
+        ICON_Num = 91;
+        if (renovation_Num == 23) {
+            var Range = 1;
+        }
+        if (renovation_Num == 22) {
+            var Range = 2;
+        }
+        if (renovation_Num == 21) {
+            var Range = 3;
+        }
+        var ARR = ARR_width[1];
         var hhh = parseInt(inventory_t.offsetHeight/2);
         inventory_t_t.style.height = hhh + "px"
         var ttt = parseInt(inventory_t.offsetHeight/4);
@@ -471,11 +510,14 @@ function establish_fun() {
     }
     console.log(ICON)
     for (var i = 0 ; i < ICON_Num; i++) {
-
         var div = document.createElement("div");
         div.style.background = "url(imges/furniture/" + ICON + "/icon.png)";
         div.index = i;
         div.style.backgroundPosition = i*-48 + "px";
+        if (ARR[i] > Range) {
+            div.style.pointerEvents = "none";
+            div.style.opacity = "0.5";
+        }
         icon_box.appendChild(div).className = "icon";
     }
     if (70%parseInt(icon_box.offsetWidth/60) != 0) {//空按钮,填充空位
@@ -498,9 +540,14 @@ for (var i = 0 ; i < iconArr.length; i++) {
 
 
 icon_box.addEventListener("click",function(e){
-    console.log(ICON)
     if (e.target.index != undefined) {
-        inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"
+        if (ICON == "k-b-t" && e.target.index > 85) {
+            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".gif"
+        }else if (ICON == "k-b-b" && e.target.index > 67) {
+            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".gif"
+        }else{
+            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"  
+        }
         if (renovation_Num < 12) {
             var ARR = ARR_width[0];
         }else if (renovation_Num > 23) {
@@ -508,13 +555,11 @@ icon_box.addEventListener("click",function(e){
         }else{
             var ARR = ARR_width[1];
         }
+        renovation_img = e.target.index;
+        inventory_l_img.style.width = ARR[renovation_img]*48 + "px"
+        inventory_l_img.style.marginLeft = Math.abs(ARR[renovation_img]-3)*24 + "px"
+        IMG_width = ARR[renovation_img];
     }
-    renovation_img = e.target.index;
-    
-    inventory_l_img.style.width = ARR[renovation_img]*48 + "px"
-    inventory_l_img.style.marginLeft = Math.abs(ARR[renovation_img]-3)*24 + "px"
-    // console.log(e.target.index)
-
 })
 var X = 0;
 var Y = 0;
