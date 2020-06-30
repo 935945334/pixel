@@ -356,20 +356,23 @@ function roleMX(){
 
 xuan_ren_img.addEventListener("click",function(e){
     console.log(e.target.index);
-    var list = [Abigail,Haley,Leah,Maru,Penny,Emily,Alex,Elliott,Harvey,Sam,Sebastian,Shane];
-    var name = list[e.target.index];
-    for (var i = 0; i < Arr.length; i++) {
-        var n = "imges/furniture/k-t/";
-        if (i > 11 && i < 24) {
-            n = "imges/furniture/k-b-t/";
-        }else if (i > 23) {
-            n = "imges/furniture/k-b-b/";
+    if (e.target.index != undefined) {
+        var list = [Abigail,Haley,Leah,Maru,Penny,Emily,Alex,Elliott,Harvey,Sam,Sebastian,Shane];
+        var name = list[e.target.index];
+        for (var i = 0; i < Arr.length; i++) {
+            var n = "imges/furniture/k-t/";
+            if (i > 11 && i < 24) {
+                n = "imges/furniture/k-b-t/";
+            }else if (i > 23) {
+                n = "imges/furniture/k-b-b/";
+            }
+            Arr[i].src = n + name[i];
         }
-        Arr[i].src = n + name[i];
+        kt.style.background = "url(imges/wall/" + name[39] + ".png) 0% 0% / auto 100%";
+        kb.style.background = "url(imges/floor/" + name[38] + ".png) 0% 0% / auto 100%";
+        xuan_ren.style.display = "none";
     }
-    kt.style.background = "url(imges/wall/" + name[39] + ".png) 0% 0% / auto 100%";
-    kb.style.background = "url(imges/floor/" + name[38] + ".png) 0% 0% / auto 100%";
-    xuan_ren.style.display = "none";
+    
 })
 
 function neighbor() {
@@ -394,9 +397,34 @@ function renovation() {
     }
     xuan_ren.style.display = "none";
     movek.style.pointerEvents = "none";
+    document.getElementById("neighbor_Btn").style.display = "none";
+    document.getElementById("renovation_Btn").style.display = "none";
+    document.getElementById("save_Btn").style.display = "block";
+    document.getElementById("cancel_Btn").style.display = "block";
 }
-
-
+function saveBtn() {
+    for (var i = 0; i < Arr.length; i++) {
+        var n = "imges/furniture/k-t/";
+        if (i > 11 && i < 24) {
+            n = "imges/furniture/k-b-t/";
+        }else if (i > 23) {
+            n = "imges/furniture/k-b-b/";
+        }
+        Arr[i].src = n + user[i];
+    }
+    for (var i = 0; i < installArr.length; i++) {
+        installArr[i].style.pointerEvents = "none";
+    }
+    movek.style.pointerEvents = "auto";
+    xuan_ren.style.display = "none";
+    document.getElementById("neighbor_Btn").style.display = "block";
+    document.getElementById("renovation_Btn").style.display = "block";
+    document.getElementById("save_Btn").style.display = "none";
+    document.getElementById("cancel_Btn").style.display = "none";
+}
+function cancelBtn() {
+    xuan_ren.style.display = "none";
+}
 
 
 
@@ -406,37 +434,93 @@ function renovation() {
 var renovation_Num;
 var renovation_img;
 var k = document.getElementById("k");
+var icon_width;
 k.addEventListener("click",function(e){
     if (e.target.index != undefined) {
         inventory.style.display = "flex";
         renovation_Num = e.target.index;
         establish_fun()
+        for (var i = 0; i < installArr.length; i++) {
+            installArr[i].style.pointerEvents = "none";
+        }
     }
     console.log(renovation_Num);
 })
-
-function determine() {
-    if (ICON == "k-b-t" && renovation_img > 85) {
-        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
-    }else if (ICON == "k-b-b" && renovation_img > 67) {
-        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
-    }else{
-        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png"  
+icon_box.addEventListener("click",function(e){
+    console.log(e.target.index)
+    if (e.target.index != undefined) {
+        if (ICON == "k-b-t") {
+            if (e.target.index > 85) {
+                inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".gif"
+            }else{
+                inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"  
+            }
+        }else if (ICON == "k-b-b") {
+            if (e.target.index > 67) {
+                inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".gif"
+            }else {
+                inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"  
+            }
+        }else if (ICON == "k-t") {
+            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"  
+        }else if (ICON == "wall") {
+            inventory_t_t.style.background = "url(imges/wall/" + e.target.index +".png) bottom";
+        }else if (ICON == "floor") {
+            inventory_t_b.style.background = "url(imges/floor/" + e.target.index +".png)";
+        }
+        if (renovation_Num < 12) {
+            var ARR = ARR_width[0];
+        }else if (renovation_Num > 23) {
+            var ARR = ARR_width[2];
+        }else{
+            var ARR = ARR_width[1];
+        }
+        renovation_img = e.target.index;
+        icon_width = ARR[renovation_img];
+        inventory_l_img.style.width = ARR[renovation_img]*48 + "px"
+        inventory_l_img.style.marginLeft = Math.abs(ARR[renovation_img]-3)*24 + "px"
+        IMG_width = ARR[renovation_img];
     }
-    // Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png";
+})
+function determine() {
+    if (ICON == "k-b-t") {
+        if (renovation_img > 85) {
+            Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
+            user.splice(renovation_Num,1,renovation_img + ".gif");
+        }else{
+           Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png"
+            user.splice(renovation_Num,1,renovation_img + ".png"); 
+        }
+        save_img.splice(renovation_Num,1,icon_width);
+    }else if (ICON == "k-b-b") {
+        if (renovation_img > 67) {
+            Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
+            user.splice(renovation_Num,1,renovation_img + ".gif");
+        }else{
+            Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png"
+            user.splice(renovation_Num,1,renovation_img + ".png");
+        }
+        save_img.splice(renovation_Num,1,icon_width);
+    }else if (ICON == "k-t"){
+        Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png"
+        save_img.splice(renovation_Num,1,icon_width);
+        user.splice(renovation_Num,1,renovation_img + ".png"); 
+    }else if (ICON == "wall") {
+        kt.style.background = "url(imges/wall/" + renovation_img + ".png) 0% 0% / auto 100%";
+        user.splice(39,1,renovation_img);
+    }else if (ICON == "floor") {
+        kb.style.background = "url(imges/floor/" + renovation_img + ".png) 0% 0% / auto 100%";
+        user.splice(38,1,renovation_img);
+    }
     console.log(installArr[renovation_Num])
     inventory.style.display = "none";
     icon_box.innerHTML = "";
-    inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
     icon_box.style.top = "0px";
     scrollbar_div.style.top = "0px";
-    if (IMG_width > 1) {
-        for (var i = 1; i < IMG_width; i++) {
-        Arr[renovation_Num + i].src = "imges/furniture/" + ICON + "/0.png";
-        console.log(Arr[renovation_Num + i].parentNode)
-        Arr[renovation_Num + i].parentNode.style.pointerEvents = "none";
-        }
-    }
+    // console.log(save_img);
+    // console.log(user);
+
+    Disable();
 }
 function cancel() {
     console.log("cancel")
@@ -445,6 +529,71 @@ function cancel() {
     inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
     icon_box.style.top = "0px";
     scrollbar_div.style.top = "0px";
+    for (var i = 0; i < installArr.length; i++) {
+        installArr[i].style.pointerEvents = "auto";
+        installArr[i].index = i;
+        // console.log(installArr[i].index)
+    }
+}
+function Disable() {
+    console.log("Disable")
+    for (var i = 0; i < install.length; i++) {
+        if (i < 12) {
+            // console.log(user[i])
+            if (user[i] != "0.png") {
+                Arr[i].src = "imges/furniture/k-t/" + user[i];
+            }else{
+                Arr[i].src = "imges/furniture/k-t/" + install[i];
+            }
+        }else if (i > 23) {
+            if (user[i] != "0.png") {
+                Arr[i].src = "imges/furniture/k-b-b/" + user[i];
+            }else{
+                Arr[i].src = "imges/furniture/k-b-b/" + install[i];
+            }
+        }
+        Arr[i].parentNode.style.pointerEvents = "auto";
+    }
+    for (var i = 0; i < save_img.length; i++) {
+        if (save_img[i] > 0) {
+            for (var x = 1; x < save_img[i]; x++) {
+                Arr[i + x].src = "imges/furniture/" + ICON + "/0.png";
+                Arr[i + x].parentNode.style.pointerEvents = "none";
+                user.splice(i+x,1,"0.png");
+                save_img.splice(i+x,1,0);
+            }
+        }
+    }
+}
+function wall() {
+    inventory.style.display = "flex";
+    renovation_Num = "wall";
+    ICON = "wall"
+    for (var i = 0; i < installArr.length; i++) {
+        installArr[i].style.pointerEvents = "none";
+    }
+    for (var i = 0 ; i < 36; i++) {
+        var div = document.createElement("div");
+        div.style.background = "url(imges/" + ICON +"/icon.png)";
+        div.index = i;
+        div.style.backgroundPosition = i*-48 + "px";
+        icon_box.appendChild(div).className = "icon";
+    }
+}
+function floor() {
+    inventory.style.display = "flex";
+    renovation_Num = "floor";
+    ICON = "floor"
+    for (var i = 0; i < installArr.length; i++) {
+        installArr[i].style.pointerEvents = "none";
+    }
+    for (var i = 0 ; i < 26; i++) {
+        var div = document.createElement("div");
+        div.style.background = "url(imges/" + ICON +"/icon.png)";
+        div.index = i;
+        div.style.backgroundPosition = i*-48 + "px";
+        icon_box.appendChild(div).className = "icon";
+    }
 }
 var ICON = "k-t";
 var ICON_Num = 70;
@@ -466,10 +615,10 @@ function establish_fun() {
     if (renovation_Num < 12) {
         ICON = "k-t";
         ICON_Num = 70;
-        if (renovation_Num == 11) {
+        if (renovation_Num == 11 || renovation_Num == 5) {
             var Range = 1;
         }
-        if (renovation_Num == 10) {
+        if (renovation_Num == 10 || renovation_Num == 4) {
             var Range = 2;
         }
         var ARR = ARR_width[0];
@@ -493,13 +642,13 @@ function establish_fun() {
     }else{
         ICON = "k-b-t";
         ICON_Num = 91;
-        if (renovation_Num == 23) {
+        if (renovation_Num == 23 || renovation_Num == 17) {
             var Range = 1;
         }
-        if (renovation_Num == 22) {
+        if (renovation_Num == 22 || renovation_Num == 16) {
             var Range = 2;
         }
-        if (renovation_Num == 21) {
+        if (renovation_Num == 21 || renovation_Num == 15) {
             var Range = 3;
         }
         var ARR = ARR_width[1];
@@ -529,6 +678,10 @@ function establish_fun() {
     inventory_r_m_1.style.height = inventory_l_m_2.offsetHeight + "px";
     icon_box_H = inventory_r_m_1.offsetHeight - icon_box.offsetHeight;
     scrollbar_H = (scrollbar.offsetHeight-30)/(icon_box.offsetHeight-inventory_l_m_2.offsetHeight);
+    inventory_l_img.src = "imges/furniture/" + ICON + "/" + user[renovation_Num];
+    inventory_l_img.style.width = ARR[renovation_img]*48 + "px"
+    inventory_l_img.style.marginLeft = Math.abs(ARR[renovation_img]-3)*24 + "px"
+
 }
 
 
@@ -539,28 +692,7 @@ for (var i = 0 ; i < iconArr.length; i++) {
 }
 
 
-icon_box.addEventListener("click",function(e){
-    if (e.target.index != undefined) {
-        if (ICON == "k-b-t" && e.target.index > 85) {
-            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".gif"
-        }else if (ICON == "k-b-b" && e.target.index > 67) {
-            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".gif"
-        }else{
-            inventory_l_img.src = "imges/furniture/" + ICON + "/" + e.target.index + ".png"  
-        }
-        if (renovation_Num < 12) {
-            var ARR = ARR_width[0];
-        }else if (renovation_Num > 23) {
-            var ARR = ARR_width[2];
-        }else{
-            var ARR = ARR_width[1];
-        }
-        renovation_img = e.target.index;
-        inventory_l_img.style.width = ARR[renovation_img]*48 + "px"
-        inventory_l_img.style.marginLeft = Math.abs(ARR[renovation_img]-3)*24 + "px"
-        IMG_width = ARR[renovation_img];
-    }
-})
+
 var X = 0;
 var Y = 0;
 var boxT = 0;
