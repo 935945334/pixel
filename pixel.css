@@ -3,7 +3,9 @@ body{
 	pointer-events: none;
 	width: 100%;
 }
-
+html{
+	cursor:url(imges/Pointer.ico),auto;
+}
 #movek{
 	/*background: #000;
 	opacity: 0.5;*/
@@ -46,8 +48,8 @@ body{
     justify-content: center;
 }
 .play-pc{
-	width: 812px;
-	height: 375px;
+	width: 736px;
+	height: 414px;
 	margin: 0 auto;
 	margin-top: 100px;
 }
@@ -65,7 +67,7 @@ body{
 }
 .play-Mobile-pad{
 	width: 100%;
-	max-width: 812px;
+	max-width: 736px;
 	margin: 0 auto;
 	margin-top: 100px;
 }
@@ -515,7 +517,8 @@ input{
 	display: -webkit-flex;
     display: flex;
     display: none;
-
+	max-height: 414px;
+	max-width: 736px;
 }
 #xuan_ren_img{
     width: 560px;
@@ -554,6 +557,8 @@ input{
      -webkit-align-items: center;
     align-items: center;
     display: none;
+    max-height: 414px;
+	max-width: 736px;
 }
 #inventory-l{
 	/*width: 24%;*/
@@ -835,6 +840,8 @@ input{
     align-items: center;
     display: none;
     z-index: 200;
+    max-height: 414px;
+	max-width: 736px;
 }
 #author-body{
 	width: 94%;
