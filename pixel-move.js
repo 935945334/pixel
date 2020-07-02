@@ -19,15 +19,19 @@ function xuanRen(){
 
 
 
-
+window.onload = function() {
+    role.style.marginTop = kt.offsetHeight - 40 + "px"
+    role.style.paddingTop = 70 + "px";
+    
+    
+}
 
 
 
 
 //人物初始位置定位
 function roleHeight(){
-    role.style.marginTop = kt.offsetHeight - 40 + "px"
-    role.style.paddingTop = 70 + "px";
+    
     if (/(iPhone|iPod|iOS)/i.test(navigator.userAgent)) { 
         // alert("苹果")
         if (window.orientation == 90 || window.orientation == -90) {
@@ -323,6 +327,7 @@ function moveMYX(){
         }else if (my_room == false) {
             console.log(my_room);
             neighbor();
+            alert(1)
         }
         document.getElementById("men").src = "imges/furniture/men.png";
     }
@@ -603,11 +608,7 @@ var ICON_Num = 70;
 
 var icon_Num_1;
 var scrollbar_H;
-window.onload = function() {
-    
-    
-    
-}
+
 
 
 
