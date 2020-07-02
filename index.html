@@ -10,6 +10,28 @@
 <body id="body-x">
 	
 	<div id="play" class="play-pc">
+		<div id="author">
+			<div id="author-body">
+				<div id="author-1" class="author-div">
+					<div id="author-1-1"></div>
+					<div id="author-1-2"></div>
+					<div id="author-1-3"></div>
+				</div>
+				<div id="author-2" class="author-div">
+					<div id="author-2-1"></div>
+					<div id="author-2-2">
+						<img src="imges/portrait/erweima.png" alt="" id="erweima">
+						<img src="imges/portrait/X.png" alt="" id="X" onclick="author_X();">
+					</div>
+					<div id="author-2-3"></div>
+				</div>
+				<div id="author-3" class="author-div">
+					<div id="author-3-1"></div>
+					<div id="author-3-2"></div>
+					<div id="author-3-3"></div>
+				</div>
+			</div>
+		</div>
 		<div id="inventory">
 			<div id="inventory-l">
 				<div id="inventory-l-t">
@@ -77,14 +99,14 @@
 				<img src="imges/portrait/4.png" alt="" class="portrait">
 				<img src="imges/portrait/5.png" alt="" class="portrait">
 				<img src="imges/portrait/6.png" alt="" class="portrait">
-				<img src="imges/portrait/farm.png" alt="" id="return_room">
+				<img src="imges/portrait/author.png" alt="" onclick="author();">
 				<img src="imges/portrait/7.png" alt="" class="portrait">
 				<img src="imges/portrait/8.png" alt="" class="portrait">
 				<img src="imges/portrait/9.png" alt="" class="portrait">
 				<img src="imges/portrait/10.png" alt="" class="portrait">
 				<img src="imges/portrait/11.png" alt="" class="portrait">
 				<img src="imges/portrait/12.png" alt="" class="portrait">
-				<img src="imges/portrait/return_room.png" alt="" id="return_room">
+				<img src="imges/portrait/return_room.png" alt="" id="return_room" onclick="return_room();">
 			</div>
 
 		</div>
@@ -106,7 +128,7 @@
 			</div>
 			<div id="furniture">
 				<div id="role">
-					<img src="imges/Abigail/Abigail.png" alt="" id="role-1">
+					<img src="imges/cat/cat.png" alt="" id="role-1">
 				</div>
 			</div>
 			
@@ -158,11 +180,9 @@
 
 			</div>
 			<div id="k-b">
-				<div id="wall_Btn">
-					<img src="imges/portrait/wall.png" alt="" onclick="wall();">
-				</div>
-				<div id="floor_Btn">
-					<img src="imges/portrait/floor.png" alt="" onclick="floor();">
+				<div id="wall_floor_Btn">
+					<img src="imges/furniture/wall.gif" alt="" onclick="wall();">
+					<img src="imges/furniture/floor.gif" alt="" onclick="floor();">
 				</div>
 				<div id="movek" onmousemove="get_canvas(event,this)" onclick="move();"></div>
 				<div id="k-b-1">

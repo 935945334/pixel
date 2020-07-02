@@ -38,7 +38,7 @@ function xuanRen(){
 
 //人物初始位置定位
 function roleHeight(){
-    role.style.marginTop = kt.offsetHeight - 60 + "px"
+    role.style.marginTop = kt.offsetHeight - 40 + "px"
     role.style.paddingTop = 70 + "px";
     if (/(iPhone|iPod|iOS)/i.test(navigator.userAgent)) { 
         // alert("苹果")
@@ -401,6 +401,7 @@ function renovation() {
     document.getElementById("renovation_Btn").style.display = "none";
     document.getElementById("save_Btn").style.display = "block";
     document.getElementById("cancel_Btn").style.display = "block";
+    document.getElementById("wall_floor_Btn").style.display = "flex";
 }
 function saveBtn() {
     for (var i = 0; i < Arr.length; i++) {
@@ -421,6 +422,7 @@ function saveBtn() {
     document.getElementById("renovation_Btn").style.display = "block";
     document.getElementById("save_Btn").style.display = "none";
     document.getElementById("cancel_Btn").style.display = "none";
+    document.getElementById("wall_floor_Btn").style.display = "none";
 }
 function cancelBtn() {
     xuan_ren.style.display = "none";
@@ -492,6 +494,7 @@ function determine() {
             user.splice(renovation_Num,1,renovation_img + ".png"); 
         }
         save_img.splice(renovation_Num,1,icon_width);
+        inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
     }else if (ICON == "k-b-b") {
         if (renovation_img > 67) {
             Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".gif"
@@ -501,10 +504,12 @@ function determine() {
             user.splice(renovation_Num,1,renovation_img + ".png");
         }
         save_img.splice(renovation_Num,1,icon_width);
+        inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
     }else if (ICON == "k-t"){
         Arr[renovation_Num].src = "imges/furniture/" + ICON + "/" + renovation_img + ".png"
         save_img.splice(renovation_Num,1,icon_width);
         user.splice(renovation_Num,1,renovation_img + ".png"); 
+        inventory_l_img.src = "imges/furniture/" + ICON + "/0.png"
     }else if (ICON == "wall") {
         kt.style.background = "url(imges/wall/" + renovation_img + ".png) 0% 0% / auto 100%";
         user.splice(39,1,renovation_img);
@@ -569,6 +574,7 @@ function wall() {
     inventory.style.display = "flex";
     renovation_Num = "wall";
     ICON = "wall"
+    inventory_t_t.style.height = "138px"
     for (var i = 0; i < installArr.length; i++) {
         installArr[i].style.pointerEvents = "none";
     }
@@ -584,6 +590,7 @@ function floor() {
     inventory.style.display = "flex";
     renovation_Num = "floor";
     ICON = "floor"
+    inventory_t_t.style.height = "138px"
     for (var i = 0; i < installArr.length; i++) {
         installArr[i].style.pointerEvents = "none";
     }
@@ -750,9 +757,28 @@ window.addEventListener('touchend', function() {//结束移动函数
     // }
 })
 
-
-
-
+function author() {
+    document.getElementById("author").style.display = "flex";
+    var author_H = document.getElementById("author-body").offsetHeight;
+    document.getElementById("author-2").style.height = author_H - 36 + "px";
+}
+function return_room() {
+    for (var i = 0; i < Arr.length; i++) {
+        var n = "imges/furniture/k-t/";
+        if (i > 11 && i < 24) {
+            n = "imges/furniture/k-b-t/";
+        }else if (i > 23) {
+            n = "imges/furniture/k-b-b/";
+        }
+        Arr[i].src = n + user[i];
+    }
+    kt.style.background = "url(imges/wall/" + user[39] + ".png) 0% 0% / auto 100%";
+    kb.style.background = "url(imges/floor/" + user[38] + ".png) 0% 0% / auto 100%";
+    xuan_ren.style.display = "none";
+}
+function author_X() {
+    document.getElementById("author").style.display = "none";
+}
 
 
 

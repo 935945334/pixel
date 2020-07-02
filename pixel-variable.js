@@ -6,11 +6,11 @@ var kt_w = kt.scrollWidth;
 var kb = document.getElementById("k-b");
 var kl = document.getElementById("k-l");
 var role_1 = document.getElementById("role-1");
-var role_img = "imges/Abigail/Abigail.png";
-var role_top = "imges/Abigail/top.gif";
-var role_bottom = "imges/Abigail/bottom.gif";
-var role_left = "imges/Abigail/left.gif";
-var role_right = "imges/Abigail/right.gif";
+var role_img = "imges/cat/cat.png";
+var role_top = "imges/cat/top.gif";
+var role_bottom = "imges/cat/bottom.gif";
+var role_left = "imges/cat/left.gif";
+var role_right = "imges/cat/right.gif";
 var t = 0; 
 var play = document.getElementById("play");
 var kr = document.getElementById("k-r");
@@ -79,7 +79,7 @@ var Leah = ["12.png","1.png","4.png","50.png","10.png","27.png","26.png","0.png"
 "8.png","5.png","0.png","0.png","33.png","28.png","11.png","12.png","Leah.gif","0.png","0.png","58.png","0.png","36.png",6,7];
 
 
-var Maru = ["34.png","0.png","0.png","4.png","66.png","0.png","28.png","0.png","55.png","0.png","0.png","49.png",
+var Maru = ["34.png","0.png","0.png","4.png","64.png","0.png","28.png","0.png","55.png","0.png","0.png","49.png",
 "79.png","0.png","18.png","31.png","67.png","0.png","0.png","24.png","66.png","0.png","56.png","0.png",
 "16.png","0.png","18.png","0.png","61.png","0.png","0.png","14.png","Maru.gif","0.png","0.png","0.png","36.png","9.png",9,9];
 
@@ -89,7 +89,7 @@ var Penny = ["5.png","0.png","12.png","0.png","0.png","0.png","13.png","0.png","
 "34.png","62.png","0.png","0.png","37.png","0.png","0.png","44.png","0.png","33.png","41.png","0.png","56.png","0.png",6,6];
 
 
-var Emily = ["68.png","0.png","5.png","0.png","8.png","1.png","0.png","61.png","0.png","0.png","1.png","8.png",
+var Emily = ["66.png","0.png","5.png","0.png","8.png","1.png","0.png","61.png","0.png","0.png","1.png","8.png",
 "62.png","0.png","57.png","0.png","63.png","0.png","parrot.gif","0.png","0.png","23.png","76.png","0.png",
 "10.png","45.png","0.png","3.png","0.png","Emily.gif","0.png","0.png","44.png","0.png","0.png","66.png","0.png","0.png",11,10];
 
