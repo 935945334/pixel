@@ -46,6 +46,7 @@ var inventory_t = document.getElementById("inventory-t");
 var inventory_t_t = document.getElementById("inventory-t-t");
 var inventory_t_b = document.getElementById("inventory-t-b");
 var k_Btn = document.getElementById("k_Btn");
+var my_room = true;
 var IMG_width;
 var T_width = [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3];
 var M_width = [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,1,1,4,3,3];
@@ -99,7 +100,7 @@ var Alex = ["0.png","49.png","0.png","36.png","37.png","0.png","38.png","4.png",
 "63.png","0.png","0.png","4.png","0.png","21.png","0.png","Alex.gif","0.png","20.png","67.png","0.png","0.png","19.png",15,11];
 
 
-var Elliott = ["0.png","14.png","0.png","57.png","0.png","0.png","6.png","0.png","0.png","0.png","0.png","25.png",
+var Elliott = ["0.png","14.png","0.png","2.png","0.png","0.png","6.png","0.png","0.png","0.png","0.png","25.png",
 "68.png","0.png","Elliott.gif","0.png","0.png","0.png","42.png","93.png","0.png","0.png","0.png","12.png",
 "46.png","0.png","30.png","0.png","23.png","0.png","0.png","0.png","0.png","0.png","11.png","39.png","0.png","38.png",6,12];
 

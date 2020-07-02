@@ -6,18 +6,6 @@ roleHeight()
 
 //点击门触发
 function xuanRen(){
-    // if (txt == 0) {
-    //     document.getElementById("coordinate").style.display = "block";
-    //     window.txt = 1;
-    // }else if (txt == 1) {
-    //     document.getElementById("coordinate").style.display = "none";
-    //     window.txt = 0;
-    // }
-
-
-
-
-
     jc();//若函数运行中则终止运行
     zt();//设置函数运行状态，t=1(运行中) t=0(未运行)
     roleMX();
@@ -327,11 +315,16 @@ function moveMYX(){
         var t = 0;
         window.t = t;
         role_1.src = role_img;
-        xuan_ren.style.display = "flex";
-        menu.style.display = "block";
-        xuan_ren_img.style.display = "none";
+        console.log(my_room);
+        if (my_room == true) {
+            xuan_ren.style.display = "flex";
+            menu.style.display = "block";
+            xuan_ren_img.style.display = "none"; 
+        }else if (my_room == false) {
+            console.log(my_room);
+            neighbor();
+        }
         document.getElementById("men").src = "imges/furniture/men.png";
-
     }
 }
 
@@ -376,6 +369,9 @@ xuan_ren_img.addEventListener("click",function(e){
 })
 
 function neighbor() {
+    console.log(my_room);
+    my_room = false;
+    xuan_ren.style.display = "flex";
     menu.style.display = "none";
     xuan_ren_img.style.display = "flex";
 }
@@ -763,6 +759,7 @@ function author() {
     document.getElementById("author-2").style.height = author_H - 36 + "px";
 }
 function return_room() {
+    my_room = true;
     for (var i = 0; i < Arr.length; i++) {
         var n = "imges/furniture/k-t/";
         if (i > 11 && i < 24) {
