@@ -327,7 +327,6 @@ function moveMYX(){
         }else if (my_room == false) {
             console.log(my_room);
             neighbor();
-            alert(1)
         }
         document.getElementById("men").src = "imges/furniture/men.png";
     }
@@ -777,8 +776,16 @@ function return_room() {
 function author_X() {
     document.getElementById("author").style.display = "none";
 }
-
-
+window.onload = function() {
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        inventory.style.max-width = screen.width + "px";
+        inventory.style.maxHeight = screen.height + "px";
+        author.style.max-width = screen.width + "px";
+        author.style.maxHeight = screen.height + "px";
+        xuan_ren.style.max-width = screen.width + "px";
+        xuan_ren.style.maxHeight = screen.height + "px";
+    }
+}
 
 
 
