@@ -25,8 +25,8 @@ window.onload = function() {
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
         inventory.style.maxWidth = screen.width + "px";
         inventory.style.maxHeight = screen.height + "px";
-        author.style.maxWidth = screen.width + "px";
-        author.style.maxHeight = screen.height + "px";
+        document.getElementById("author").style.maxWidth = screen.width + "px";
+        document.getElementById("author").style.maxHeight = screen.height + "px";
         xuan_ren.style.maxWidth = screen.width + "px";
         xuan_ren.style.maxHeight = screen.height + "px";
     }

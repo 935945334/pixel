@@ -45,7 +45,6 @@ var inventory_l_img = document.getElementById("inventory-l-img");
 var inventory_t = document.getElementById("inventory-t");
 var inventory_t_t = document.getElementById("inventory-t-t");
 var inventory_t_b = document.getElementById("inventory-t-b");
-var author = document.getElementById("author");
 var k_Btn = document.getElementById("k_Btn");
 var my_room = true;
 var IMG_width;
