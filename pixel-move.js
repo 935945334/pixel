@@ -529,7 +529,7 @@ function determine() {
     icon_box.innerHTML = "";
     icon_box.style.top = "0px";
     scrollbar_div.style.top = "0px";
-    // console.log(save_img);
+    // console.log(install);
     // console.log(user);
 
     Disable();
@@ -562,6 +562,12 @@ function Disable() {
                 Arr[i].src = "imges/furniture/k-b-b/" + user[i];
             }else{
                 Arr[i].src = "imges/furniture/k-b-b/" + install[i];
+            }
+        }else{
+            if (user[i] != "0.png") {
+                Arr[i].src = "imges/furniture/k-b-t/" + user[i];
+            }else{
+                Arr[i].src = "imges/furniture/k-b-t/" + install[i];
             }
         }
         Arr[i].parentNode.style.pointerEvents = "auto";
@@ -707,6 +713,34 @@ var X = 0;
 var Y = 0;
 var boxT = 0;
 var boxL = 0;
+var box_state = false;
+inventory_r_m_1.onmousedown = function(e) {//鼠标移入菜单滚动条时开启农场移动状态
+    X = e.clientX;
+    Y = e.clientY;
+    //获取偏移量
+    boxT = icon_box.offsetTop;
+    boxL = icon_box.offsetLeft;
+    box_state = true;
+}
+window.onmousemove = function(e) {
+    var icon_X = e.clientX;
+    var icon_Y = e.clientY;
+    icon_L = icon_X - (X + boxT);
+    icon_T = icon_Y - (Y - boxT);
+    if (box_state == true) {
+        if (icon_T > 0) {
+            icon_T = 0;
+        }else if (icon_T < icon_box_H) {
+            icon_T = icon_box_H;
+        }
+        icon_box.style.top = icon_T + "px";
+        scrollbar_div.style.top = -(icon_T*scrollbar_H) + "px";
+    }
+    
+}
+window.onmouseup = function() {
+    box_state = false;
+}
 inventory_r_m_1.addEventListener("touchstart", function(e) {//鼠标移入农场时开启农场移动状态
     //获取坐标
     X = e.targetTouches[0].clientX;
@@ -715,10 +749,6 @@ inventory_r_m_1.addEventListener("touchstart", function(e) {//鼠标移入农场
     boxT = icon_box.offsetTop;
     boxL = icon_box.offsetLeft;
 })
-
-
-
-
 window.addEventListener('touchmove', function(e) {
     var icon_X = e.targetTouches[0].clientX;
     var icon_Y = e.targetTouches[0].clientY;
