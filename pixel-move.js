@@ -30,6 +30,7 @@ window.onload = function() {
         xuan_ren.style.maxWidth = screen.height + "px";
         xuan_ren.style.maxHeight = screen.width + "px";
     }
+    play.style.marginTop = "15%";
     
 }
 
