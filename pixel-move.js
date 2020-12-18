@@ -30,7 +30,6 @@ window.onload = function() {
         xuan_ren.style.maxWidth = screen.height + "px";
         xuan_ren.style.maxHeight = screen.width + "px";
     }
-    play.style.marginTop = "15%";
     
 }
 
@@ -60,6 +59,7 @@ function roleHeight(){
     } else {
         // alert("电脑")
         role.style.paddingLeft = parseInt(kt.offsetWidth/2) - 30  + "px";
+        play.style.marginTop = "15%";
     };
 }
 //获取点击坐标
